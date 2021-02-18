@@ -81,6 +81,17 @@
         top: 0;
     }
 
+    a, a:focus, a:hover {
+    text-decoration: none;
+    }
+    .submit-style:focus, .toggle-btn:focus, a, a:focus, a:hover {
+        outline: 0 none;
+    }
+
+    .portfolio-filter ul li, .sidebar .nav li, h4 {
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
     /* .toggle-btn {
     position: absolute;
     visibility: hidden;
@@ -210,6 +221,13 @@
         padding: 10px 0;
     }
 
+    .sidebar .nav li a {
+            background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+            color: #232323;
+            display: inline-block;
+            padding: 0;
+            transition: all 0.1s linear 0s;
+        }
 
 
 
@@ -232,40 +250,38 @@
                     <img class="user-pic" src="images/avatar.jpg" alt="">
                     <div class="signature">
                         <img class="img-responsive" alt="signature" src="images/signature.png">
-                    </div> <!--  -->
+                    </div> 
+
                     <!-- Menu -->
-                    <div class="menu">
-                        <div class="toggle-btn">
-                            <span class="lines"></span>
-                        </div>
-                        <ul class="nav">
-                            <li class="active">
-                                <a href="#about">About me</a>
-                            </li>
-                            <li>
-                                <a href="#services">Services</a>
-                            </li>
-                            <li>
-                                <a href="#portfolio">Portfolio</a>
-                            </li>
-                           <!-- <li>
-                                <a href="#resume">Resume</a>
-                            </li>
-                            <li>
-                                <a href="#blog">Blog</a>
-                            </li>
-                            <li>
-                                <a href="#testimonial">Testimonial</a>
-                            </li>
-                            <li>
-                                <a href="#contact">Contact</a>
-                            </li>
-                        </ul> -->
-                    </div>
-                    <!-- end Menu -->
                 </div>
             </div>
         </div><!-- end row -->
+    </div>
+    <!-- <div style="position:-webkit-sticky; position:sticky; top:0;">
+        hola
+    </div> -->
+    <div class="" 
+        style="position:-webkit-sticky; position:sticky; top:0; padding: 0 30px;
+        ">
+       <div class="toggle-btn">
+            <span class="lines"></span>
+        </div>
+        <div class="toggle-btn toggle-close">
+            <span class="lines"></span>
+        </div>
+        <!-- <ul class="nav">
+            <li class="active">
+                <a href="#about">About me</a>
+            </li>
+            <li>
+                <a href="#services">Services</a>
+            </li>
+            <li>
+                <a href="#portfolio">Portfolio</a>
+            </li> 
+        </ul>  -->
+    </div>
+    <!-- end Menu -->
 
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -277,7 +293,7 @@
 
 
     <!-- ##### JAVASCRIPTS ##### -->
-
+<!-- 
     <script src="js/jquery.min.js"></script>
 
     <script src="js/bootstrap.min.js"></script>
@@ -288,7 +304,7 @@
 
     <script src="js/theme-plugins.min.js"></script>
 
-    <script src="js/scripts.min.js"></script>
+    <script src="js/scripts.min.js"></script> -->
 </body>
 
 </html>
