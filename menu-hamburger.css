@@ -1,4 +1,3 @@
-
 .show-nav {
   opacity: 1;
   transform: translateY(0px);
@@ -15,14 +14,14 @@
     z-index: 997;
   } */
 
-   nav{
+   /* nav{
     box-shadow: 0 3px 10px 3px rgb(0 0 0 / 30%);
     opacity: 0; 
     transform: translateY(-10px);
     transition: all 0.9s ease-out 0s;
     visibility: hidden;
     z-index: 997;
-  } 
+  }  */
 
 
 

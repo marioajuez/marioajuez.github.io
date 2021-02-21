@@ -7,304 +7,188 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <!-- <link href="css/styles.min.css" rel="stylesheet">
-    <link href="css/responsive.min.css" rel="stylesheet">  -->
-
+    <link href="main.css" rel="stylesheet">
+    <link href="menu-hamburger.css" rel="stylesheet">
 </head>
+
 <style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    html {
-        /* font-size: 10px; */
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    }
-
-    .user-pic {
-        border-radius: 140px;
-        width: 60%;
-    }
-
-    img {
-        vertical-align: middle;
-    }
-
-    img {
-        border: 0;
-    }
-
     @media only screen and (max-width: 767px) {
-        .container {
-            padding: 0 30px;
+
+        .content,
+        .menu-sticky {
+            padding: 0 30px !important;
+        }
+
+        nav {
+            box-shadow: 0 3px 10px 3px rgb(0 0 0 / 30%);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.9s ease-out 0s;
+            visibility: hidden;
+            z-index: 997;
+            position: absolute;
+            width: 100%;
+            top: 41px;
         }
     }
 
-    .signature {
+    .sidebar {
+        background: #4527b0;
         text-align: center;
-        padding: 9px 0 12px;
+        box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.3);
+        color: #fff;
+        padding: 27px 0 0;
+        height: 100%;
     }
 
-    /* .container {
+    @media only screen and (min-width: 768px) {
+        .sidebar {
+            position: fixed;
+        }
+
+        .menu-sticky {
+            opacity: 0;
+            position: absolute;
+            visibility: hidden;
+            /* display: none; */
+        }
+    }
+
+    .content {
         margin-right: auto;
         margin-left: auto;
         padding-left: 15px;
         padding-right: 15px;
-    }  */
+    }
 
-    .sidebarWrapper {
+    @media (min-width: 768px) {
+        .content {
+            width: 750px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .content {
+            width: 970px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .content {
+            width: 1170px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .col-sm-2 {
+            width: 16.66666667%;
+        }
+    }
+
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    *:before,
+    *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .content:before {
+        content: " ";
+        display: table;
+    }
+
+    .row,
+    li,
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    nav {
         box-shadow: 0 3px 10px 3px rgb(0 0 0 / 30%);
-        color: #fff;
-        padding: 27px 0 0;
+        padding: 20px 30px;
     }
-
-    .footer-background,
-    .imageHover,
-    .popup-box h3,
-    .sidebarWrapper,
-    .social-media,
-    .toggle-btn {
-        text-align: center;
-    }
-
-    .sidebarWrapper {
-        background: #1a1142;
-        text-align: center;
-        height: 100%;
-    }
-
-    .sidebar {
-        padding: 0;
-        position: relative;
-        top: 0;
-    }
-
-    a, a:focus, a:hover {
-    text-decoration: none;
-    }
-    .submit-style:focus, .toggle-btn:focus, a, a:focus, a:hover {
-        outline: 0 none;
-    }
-
-    .portfolio-filter ul li, .sidebar .nav li, h4 {
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-    /* .toggle-btn {
-    position: absolute;
-    visibility: hidden;
-} */
-    .toggle-btn {
-        cursor: pointer;
-        height: 60px;
-        line-height: 60px;
-        margin: 0;
-        width: 100%;
-        z-index: 998;
-    }
-
-    .footer-background,
-    .imageHover,
-    .popup-box h3,
-    .sidebarWrapper,
-    .social-media,
-    .toggle-btn {
-        text-align: center;
-    }
-
-    .toggle-btn {
-        background: #141414 none repeat scroll 0 0;
-        text-align: center;
-    }
-
-    .blog-post::after,
-    .lines::after,
-    .lines::before,
-    .skill-outer h4 span::before,
-    .testimonial-content h4 span::before {
-        content: "";
-    }
-
-    .lines,
-    .lines::after,
-    .lines::before {
-        background: #fff none repeat scroll 0 0;
-        display: inline-block;
-        height: 2px;
-        width: 20px;
-    }
-
-    .lines {
-        margin: 0;
-        padding: 0;
-        position: relative;
-        vertical-align: middle;
-    }
-
-    .lines::after,
-    .lines::before {
-        left: 0;
-        position: absolute;
-        transition: all 0.2s linear 0s;
-    }
-
-    .lines::before {
-        top: 5px;
-    }
-
-    .lines::after {
-        top: -5px;
-    }
-
-    .toggle-close .lines {
-        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    }
-
-    .toggle-close .lines::after,
-    .toggle-close .lines::before {
-        top: 0;
-        transform-origin: 50% 50% 0;
-    }
-
-    .toggle-close .lines::before {
-        transform: rotate3d(0, 0, 1, 45deg);
-    }
-
-    .toggle-close .lines::after {
-        transform: rotate3d(0, 0, 1, -45deg);
-    }
-
-
-
-    @media only screen and (max-width: 767px) {
-        .nav {
-            background: #141414 none repeat scroll 0 0;
-            box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.3);
-            left: 0;
-            opacity: 0;
-            position: absolute;
-            top: 60px;
-            transform: translateY(-10px);
-            transition: all 0.3s ease-out 0s;
-            visibility: hidden;
-            width: 100%;
-            z-index: 997;
-        }
-
-        .show-nav {
-            opacity: 1;
-            transform: translateY(0px);
-            visibility: visible;
-        }
-
-        .stickyNav {
-            left: 30px;
-            position: fixed;
-            right: 30px;
-            width: auto;
-        }
-
-        .sidebar .nav {
-            padding: 20px 30px;
-            background: #fff none repeat scroll 0 0;
-            padding: 20px 30px;
-        }
-        .menu {
-            position: relative;
-        }
-    }
-
-    .sidebar .nav li {
-        font: 900 13px "Titillium Web",serif;
-        padding: 10px 0;
-    }
-
-    .sidebar .nav li a {
-            background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-            color: #232323;
-            display: inline-block;
-            padding: 0;
-            transition: all 0.1s linear 0s;
-        }
-
-
-
-
-
-
-    /* .row, li, ul {
-    margin: 0;
-    padding: 0;
-} */
 </style>
 
-<body>
-    <!-- <h1>olsa</h1> -->
-    <div class="container">
-        <div>
-            <div class="sidebar">
-                <div class="sidebarWrapper">
-                    <!-- Avatar -->
-                    <img class="user-pic" src="images/avatar.jpg" alt="">
-                    <div class="signature">
-                        <img class="img-responsive" alt="signature" src="images/signature.png">
-                    </div> 
 
-                    <!-- Menu -->
+<body>
+
+    <div class="content">
+        <div class="row">
+            <div class="col-sm-2" style="   
+                padding: 0;
+                position: relative;
+                top: 0;
+                letter-spacing: 1px;
+                text-transform: uppercase;">
+
+                <div class="sidebar col-sm-2">
+                    <img style='
+                    border-radius: 140px;
+                    width: 60%;' src="images/avatar.jpg" alt="">
+
+                    <div style="
+                        text-align: center;
+                        padding: 9px 0 12px;">
+                        <img alt="signature" src="images/signature.png">
+                    </div>
+                    <div style="position: relative;">
+                        <nav>
+                            <ul>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Meet the team</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
-        </div><!-- end row -->
-    </div>
-    <!-- <div style="position:-webkit-sticky; position:sticky; top:0;">
-        hola
-    </div> -->
-    <div class="" 
-        style="position:-webkit-sticky; position:sticky; top:0; padding: 0 30px;
-        ">
-       <div class="toggle-btn">
-            <span class="lines"></span>
         </div>
-        <div class="toggle-btn toggle-close">
-            <span class="lines"></span>
+    </div>
+
+    <div class="menu-sticky">
+        <div class="menu-hamburger">
+            <div class="linea-1"></div>
+            <div class="linea-2"></div>
+            <div class="linea-3"></div>
         </div>
-        <!-- <ul class="nav">
-            <li class="active">
-                <a href="#about">About me</a>
-            </li>
-            <li>
-                <a href="#services">Services</a>
-            </li>
-            <li>
-                <a href="#portfolio">Portfolio</a>
-            </li> 
-        </ul>  -->
     </div>
-    <!-- end Menu -->
-
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </div>
-    <!-- end container -->
 
 
-    <!-- ##### JAVASCRIPTS ##### -->
-<!-- 
-    <script src="js/jquery.min.js"></script>
 
-    <script src="js/bootstrap.min.js"></script>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-    <script src="js/retina.min.js"></script>
 
-    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
 
-    <script src="js/theme-plugins.min.js"></script>
-
-    <script src="js/scripts.min.js"></script> -->
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
+
+
 
 </html>
