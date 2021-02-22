@@ -6,3 +6,16 @@ menuHamburger.addEventListener("click", () => {
   menuHamburger.classList.toggle("open")
   nav.classList.toggle("show-nav")
 });
+
+let btnSticky = document.querySelector(".menu-hamburger");
+let menuHamburgerTop = btnSticky.offsetTop;
+
+
+let sticky = () => {
+    if (window.scrollY >= menuHamburgerTop)
+        menuHamburger.classList.add("stick")
+    else
+      menuHamburger.classList.remove("stick")
+};
+
+window.addEventListener("scroll", sticky )
