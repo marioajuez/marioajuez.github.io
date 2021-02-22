@@ -7,7 +7,7 @@ menuHamburger.addEventListener("click", () => {
   nav.classList.toggle("show-nav")
 });
 
-let btnSticky = document.querySelector(".menu-hamburger");
+let btnSticky = document.querySelector(".menu-sticky");
 let menuHamburgerTop = btnSticky.offsetTop;
 
 
