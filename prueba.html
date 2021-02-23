@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="main.css" rel="stylesheet">
+    <link href="menu-hamburger.css" rel="stylesheet">
+</head>
+
+<style>
+    @media only screen and (max-width: 767px) {
+
+        .content,
+        .menu-sticky {
+            padding: 0 30px !important;
+        }
+
+        nav {
+            box-shadow: 0 3px 10px 3px rgb(0 0 0 / 30%);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.9s ease-out 0s;
+            visibility: hidden;
+            z-index: 997;
+            position: absolute;
+            width: 100%;
+            top: 41px;
+        }
+        .stickyNav {
+            left: 30px;
+            position: fixed;
+            right: 30px;
+            width: auto;
+        }
+    }
+
+    .sidebar {
+        background: #4527b0;
+        text-align: center;
+        box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.3);
+        color: #fff;
+        padding: 27px 0 0;
+        height: 100%;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .sidebar {
+            position: fixed;
+        }
+        .menu-sticky {
+            opacity: 0;
+            position: absolute;
+            visibility: hidden;
+            display: none;
+        }
+    }
+
+    .content {
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    @media (min-width: 768px) {
+        .content {
+            width: 750px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .content {
+            width: 970px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .content {
+            width: 1170px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .col-sm-2 {
+            width: 16.66666667%;
+        }
+    }
+
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    *:before,
+    *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .content:before {
+        content: " ";
+        display: table;
+    }
+
+    .row,
+    li,
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    nav {
+        /* box-shadow: 0 3px 10px 3px rgb(0 0 0 / 30%); */
+        padding: 20px 30px;
+    }
+
+    .show-nav {
+        opacity: 1;
+        transform: translateY(0px);
+        visibility: visible;
+    }
+
+    .fixed {
+    left: 30px;
+    position: fixed;
+    right: 30px;
+    top: 0;
+    width: auto;
+}
+</style>
+
+
+<body>
+
+    <div class="content">
+        <div class="row">
+            <div class="col-sm-2" style="   
+                padding: 0;
+                position: relative;
+                top: 0;
+                letter-spacing: 1px;
+                text-transform: uppercase;">
+
+                <div class="sidebar col-sm-2">
+                    <img style='
+                    border-radius: 140px;
+                    width: 60%;' src="images/avatar.jpg" alt="">
+
+                    <div style="
+                        text-align: center;
+                        padding: 9px 0 12px;">
+                        <img alt="signature" src="images/signature.png">
+                    </div>
+                    <div style="position: relative;">
+                        <nav>
+                            <ul>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Meet the team</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-sticky" >
+        <div class="menu-hamburger">
+            <div class="linea-1"></div>
+            <div class="linea-2"></div>
+            <div class="linea-3"></div>
+        </div>
+    </div>
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- <script src="main.js"></script> -->
+    <script>
+        const menuHamburger = document.querySelector(".menu-hamburger");
+        const nav  = document.querySelector('nav');
+
+        menuHamburger.addEventListener("click", () => {
+        menuHamburger.classList.toggle("open")
+        nav.classList.toggle("show-nav")
+        });
+
+        $(window).on("load resize", function () {
+            var o = $(".menu-hamburger").offset().top;
+            console.log(o);
+            // console.log(o);
+            var a = $("nav")
+            var e = $(".menu-hamburger");
+            $(window).on("scroll", function () {
+                var s = $(window).scrollTop();
+                s >= o
+                ? (e.addClass("fixed"), a.addClass("stickyNav"))
+                : (e.removeClass("fixed"), a.removeClass("stickyNav"));
+            });
+        })
+ 
+    </script>
+</body>
+
+
+
+</html>
