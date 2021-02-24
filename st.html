@@ -165,7 +165,7 @@
                                 <li><a href="#about">About</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
-                                <li><a href="#">mario</a></li>
+                                <li><a href="#">Blog</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -212,8 +212,9 @@
 
         var a = $("nav")
         var e = $(".menu-hamburger");
+        var o = e.offset().top;
         $(window).on("load resize", function () {
-            var o = e.offset().top;
+           
             $(window).on("scroll", function () {
                 var s = $(window).scrollTop();
                 s >= o
