@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,6 +30,7 @@
             width: 100%;
             top: 41px;
         }
+
         .stickyNav {
             left: 30px;
             position: fixed;
@@ -52,6 +52,7 @@
         .sidebar {
             position: fixed;
         }
+
         .menu-sticky {
             opacity: 0;
             position: absolute;
@@ -128,12 +129,12 @@
     }
 
     .fixed {
-    left: 30px;
-    position: fixed;
-    right: 30px;
-    top: 0;
-    width: auto;
-}
+        left: 30px;
+        position: fixed;
+        right: 30px;
+        top: 0;
+        width: auto;
+    }
 </style>
 
 
@@ -163,8 +164,8 @@
                             <ul>
                                 <li><a href="#about">About</a></li>
                                 <li><a href="#">Contact</a></li>
-                                <li><a href="#">Meet the teams</a></li>
-                                <li><a href="#">Blogs</a></li>
+                                <li><a href="#">Meet the team</a></li>
+                                <li><a href="#">mario</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -172,7 +173,7 @@
             </div>
         </div>
     </div>
-    <div class="menu-sticky" >
+    <div class="menu-sticky">
         <div class="menu-hamburger">
             <div class="linea-1"></div>
             <div class="linea-2"></div>
@@ -200,25 +201,27 @@
     <!-- <script src="main.js"></script> -->
     <script>
         const menuHamburger = document.querySelector(".menu-hamburger");
-        const nav  = document.querySelector('nav');
+        const nav = document.querySelector('nav');
 
         menuHamburger.addEventListener("click", () => {
-        menuHamburger.classList.toggle("open")
-        nav.classList.toggle("show-nav")
+            menuHamburger.classList.toggle("open")
+            nav.classList.toggle("show-nav")
         });
 
-    
- 
-        var a = $("nav") 
+
+
+        var a = $("nav")
         var e = $(".menu-hamburger");
-        var o = e.offset().top;
-        $(window).on("scroll", function () {
-            var s = $(window).scrollTop();
-            s >= o
-            ? (e.addClass("fixed"), a.addClass("stickyNav"))
-            : (e.removeClass("fixed"), a.removeClass("stickyNav"));
-        });
- 
+        $(window).on("load resize", function () {
+            var o = e.offset().top;
+            $(window).on("scroll", function () {
+                var s = $(window).scrollTop();
+                s >= o
+                    ? (e.addClass("fixed"), a.addClass("stickyNav"))
+                    : (e.removeClass("fixed"), a.removeClass("stickyNav"));
+            });
+        })
+
     </script>
 </body>
 
