@@ -169,7 +169,7 @@
                                 <li><a href="#about">About</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
-                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">mario</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -213,6 +213,13 @@
         });
 
 
+    //     let stickyElem = document.querySelector(".menu-hamburger"); 
+    //     let st =  stickyElem.getBoundingClientRect().top +  window.pageYOffset; 
+    //     let currStickyPos =  stickyElem.getBoundingClientRect().top; 
+
+    //     // stickyElem.getBoundingClientRect().top + window.pageYOffset; 
+    //    console.log(currStickyPos,st, stickyElem.offsetTop);
+
 
         // var a = $("nav")
         // var e = $(".menu-hamburger");
@@ -228,13 +235,15 @@
         // })   
 
         function ready() {
-            var box = document.querySelector('.menu-hamburger')
-            var top = box.offsetTop;
+
+            let box = document.querySelector(".menu-hamburger"); 
+            let boxtop =  box.getBoundingClientRect().top + window.pageYOffset;
+
 
         function scroll(event) {
                 var y = document['documentElement' || 'body'].scrollTop;
 
-                if (y >= top) box.classList.add('fixed');
+                if (y >= boxtop) box.classList.add('fixed');
                 else box.classList.remove('fixed');
         }
 
