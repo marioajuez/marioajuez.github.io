@@ -161,7 +161,7 @@
                     <div style="position: relative;">
                         <nav>
                             <ul>
-                                <li><a href="#about">About</a></li>
+                                <li><a href="#about">About-</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
                                 <li><a href="#">Blog</a></li>
@@ -207,19 +207,35 @@
         nav.classList.toggle("show-nav")
         });
 
-        $(window).on("load resize", function () {
-            var o = $(".menu-hamburger").offset().top;
-            console.log(o);
-            // console.log(o);
-            var a = $("nav")
-            var e = $(".menu-hamburger");
-            $(window).on("scroll", function () {
-                var s = $(window).scrollTop();
-                s >= o
-                ? (e.addClass("fixed"), a.addClass("stickyNav"))
-                : (e.removeClass("fixed"), a.removeClass("stickyNav"));
-            });
-        })
+const menuHamburgerTop = document.querySelector('.menu').offsetTop;
+    
+        window.addEventListener("scroll", () => {
+        let y = document['documentElement' || 'body'].scrollTop;
+        // var y = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+        if (y >= menuHamburgerTop) {
+            menuHamburger.classList.add("fixed")
+            nav.classList.add("stickyNav")
+        }
+        else {
+            menuHamburger.classList.remove("fixed")
+            nav.classList.remove("stickyNav")
+        }
+        });
+
+
+        // $(window).on("load resize", function () {
+        //     var o = $(".menu-hamburger").offset().top;
+        //     console.log(o);
+        //     // console.log(o);
+        //     var a = $("nav")
+        //     var e = $(".menu-hamburger");
+        //     $(window).on("scroll", function () {
+        //         var s = $(window).scrollTop();
+        //         s >= o
+        //         ? (e.addClass("fixed"), a.addClass("stickyNav"))
+        //         : (e.removeClass("fixed"), a.removeClass("stickyNav"));
+        //     });
+        // })
  
     </script>
 </body>
