@@ -169,7 +169,7 @@
                                 <li><a href="#about">About</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
-                                <li><a href="#">mario</a></li>
+                                <li><a href="#">Blog</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -236,15 +236,21 @@
 
         function ready() {
 
-            let box = document.querySelector(".menu-hamburger"); 
-            let boxtop =  box.getBoundingClientRect().top + window.pageYOffset;
+            let btnHamburger = document.querySelector(".menu-hamburger");
+            let menuTop =  btnHamburger.getBoundingClientRect().top + window.pageYOffset;
 
 
         function scroll(event) {
                 var y = document['documentElement' || 'body'].scrollTop;
 
-                if (y >= boxtop) box.classList.add('fixed');
-                else box.classList.remove('fixed');
+                if (y >= menuTop){
+                    btnHamburger.classList.add('fixed');
+                    nav.classList.add("stickyNav");
+                }
+                else{
+                    btnHamburger.classList.remove('fixed');
+                    nav.classList.add("stickyNav");
+                }
         }
 
         window.addEventListener('scroll', scroll);
