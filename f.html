@@ -179,7 +179,7 @@
                             <ul>
                                 <li><a href="#about">About</a></li>
                                 <li><a href="#">Contacts</a></li>
-                                <li><a href="#">Meet the meat </a></li>
+                                <li><a href="#">Meet the meats </a></li>
                                 <li><a href="#">Blog</a></li>
                             </ul>
                         </nav>
@@ -309,8 +309,10 @@
         if ( x < 768 )
         { 
             // console.log("hola");
+            e.removeClass("fixed"),
+            a.removeClass("stickyNav")
             window.scrollTo(0,0)
-//             window.location.reload()
+            
         }
       }
     )
