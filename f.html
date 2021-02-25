@@ -147,9 +147,10 @@
     .prueba {
         position: fixed;
     }
+
     .toggle-placeholder {
-    display: none;
-}
+        display: none;
+    }
 </style>
 
 
@@ -178,8 +179,8 @@
                         <nav>
                             <ul>
                                 <li><a href="#about">About</a></li>
-                                <li><a href="#">Contacts</a></li>
-                                <li><a href="#">Meet the meats </a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Meet the team</a></li>
                                 <li><a href="#">Blog</a></li>
                             </ul>
                         </nav>
@@ -224,21 +225,21 @@
         //    console.log(currStickyPos,st, stickyElem.offsetTop);
 
 
-    //     var a = $("nav")
-    //     var e = $(".menu-hamburger");
-    //     // let o = e.offset().top;
-    //     let o = e.offset().top;
+        //     var a = $("nav")
+        //     var e = $(".menu-hamburger");
+        //     // let o = e.offset().top;
+        //     let o = e.offset().top;
 
-    //     $(window).on("load resize", function () {
-    //         $(window).on("scroll", function () {
-            
-    //         var s = $(window).scrollTop();
-    //         s >= o
-    //             ? (e.addClass("fixed"))
-    //             : (e.removeClass("fixed"));
+        //     $(window).on("load resize", function () {
+        //         $(window).on("scroll", function () {
 
-    //     });
-    // });
+        //         var s = $(window).scrollTop();
+        //         s >= o
+        //             ? (e.addClass("fixed"))
+        //             : (e.removeClass("fixed"));
+
+        //     });
+        // });
 
         // console.log(o);
         // var st = $(".menu-sticky")
@@ -284,38 +285,56 @@
         });
         $(function () {
 
-        var a = $("nav"),
-    e = $(".menu-hamburger");
-    
-    $(window).on("load resize", function () {
-    var o = $(".menu-hamburger").offset().top;
-      $(window).on("scroll", function () {
-       
-        var s = $(window).scrollTop();
-        s >= o
-          ? (e.addClass("fixed"), a.addClass("stickyNav"))
-          : (e.removeClass("fixed"), a.removeClass("stickyNav"));
-      });
-    })
-        
-    $(window).on("resize", function () {
-        
-      var win = window
-      var doc = document
-      var docElem = doc.documentElement
-      var body = doc.getElementsByTagName('body')[0]
-      var x = win.innerWidth || docElem.clientWidth || body.clientWidth
+            var a = $("nav"),
+                e = $(".menu-hamburger");
 
-        if ( x < 768 )
-        { 
-            // console.log("hola");
-            e.removeClass("fixed"),
-            a.removeClass("stickyNav")
-            window.scrollTo(0,0)
-            
-        }
-      }
-    )
+            $(window).on("load resize", function () {
+                var o = $(".menu-hamburger").offset().top;
+                $(window).on("scroll", function () {
+
+                    var s = $(window).scrollTop();
+                    s >= o
+                        ? (e.addClass("fixed"), a.addClass("stickyNav"))
+                        : (e.removeClass("fixed"), a.removeClass("stickyNav"));
+                });
+            })
+
+            // $(window).on("resize", function () {
+
+            //   var win = window
+            //   var doc = document
+            //   var docElem = doc.documentElement
+            //   var body = doc.getElementsByTagName('body')[0]
+            //   var x = win.innerWidth || docElem.clientWidth || body.clientWidth
+
+            //     if ( x < 768 )
+            //     { 
+            //         // console.log("hola");
+            //         window.scrollTo(0,0)
+            //         // e.removeClass("fixed"),
+            //         // a.removeClass("stickyNav")
+            //         // window.location.reload()
+            //     }
+            //   }
+            // )
+        })
+
+        window.addEventListener("resize", function () {
+            var win = window
+            var doc = document
+            var docElem = doc.documentElement
+            var body = doc.getElementsByTagName('body')[0]
+            var x = win.innerWidth || docElem.clientWidth || body.clientWidth
+
+            if (x < 768) {
+                // console.log("hola");
+                window.scrollTo(0, 0)
+                // e.removeClass("fixed"),
+                // a.removeClass("stickyNav")
+                // window.location.reload()
+            }
+
+
         })
 
         // function ready() {
