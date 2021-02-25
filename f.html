@@ -181,7 +181,7 @@
                                 <li><a href="#about">About</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
-                                <li><a href="#">mario</a></li>
+                                <li><a href="#">andres</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -320,11 +320,16 @@
         // })
 
         window.addEventListener("resize", function () {
+
+            // console.log(screen.width);
             var win = window
             var doc = document
-            var docElem = doc.documentElement
+            // var docElem = doc.documentElement
             var body = doc.getElementsByTagName('body')[0]
-            var x = win.innerWidth || docElem.clientWidth || body.clientWidth
+            x = win.innerWidth;
+            console.log(x);
+        
+            // var x = win.innerWidth || docElem.clientWidth || body.clientWidth
 
             if (x < 768) {
                 // console.log("hola");
