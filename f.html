@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport" content="width=device-width"> 
+    <meta name="viewport" content="width=device-width">
     <title>Document</title>
 
     <link href="main.css" rel="stylesheet">
@@ -181,8 +181,8 @@
                             <ul>
                                 <li><a href="#about">About</a></li>
                                 <li><a href="#">Contact</a></li>
-                                <li><a href="#">Meet the team</a></li>
-                                <li><a href="#">mario</a></li>
+                                <li><a href="#">Meet</a></li>
+                                <li><a href="#">Blog</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -286,38 +286,38 @@
         });
         // $(function () {
 
-            var a = $("nav"),
-                e = $(".menu-hamburger");
+        var a = $("nav"),
+            e = $(".menu-hamburger");
 
-            $(window).on("load resize", function () {
-                var o = $(".menu-hamburger").offset().top;
-                $(window).on("scroll", function () {
+        $(window).on("load resize", function () {
+            var o = $(".menu-hamburger").offset().top;
+            $(window).on("scroll", function () {
 
-                    var s = $(window).scrollTop();
-                    s >= o
-                        ? (e.addClass("fixed"), a.addClass("stickyNav"))
-                        : (e.removeClass("fixed"), a.removeClass("stickyNav"));
-                });
-            })
+                var s = $(window).scrollTop();
+                s >= o
+                    ? (e.addClass("fixed"), a.addClass("stickyNav"))
+                    : (e.removeClass("fixed"), a.removeClass("stickyNav"));
+            });
+        })
 
-            // $(window).on("resize", function () {
+        // $(window).on("resize", function () {
 
-            //   var win = window
-            //   var doc = document
-            //   var docElem = doc.documentElement
-            //   var body = doc.getElementsByTagName('body')[0]
-            //   var x = win.innerWidth || docElem.clientWidth || body.clientWidth
+        //   var win = window
+        //   var doc = document
+        //   var docElem = doc.documentElement
+        //   var body = doc.getElementsByTagName('body')[0]
+        //   var x = win.innerWidth || docElem.clientWidth || body.clientWidth
 
-            //     if ( x < 768 )
-            //     { 
-            //         // console.log("hola");
-            //         window.scrollTo(0,0)
-            //         // e.removeClass("fixed"),
-            //         // a.removeClass("stickyNav")
-            //         // window.location.reload()
-            //     }
-            //   }
-            // )
+        //     if ( x < 768 )
+        //     { 
+        //         // console.log("hola");
+        //         window.scrollTo(0,0)
+        //         // e.removeClass("fixed"),
+        //         // a.removeClass("stickyNav")
+        //         // window.location.reload()
+        //     }
+        //   }
+        // )
         // })
 
         // window.addEventListener("resize", function () {
@@ -337,36 +337,29 @@
         // })
 
         var cachedWidth = $(window).width();
-            $(window).resize(function(){
-                var newWidth = $(window).width();
-                if(newWidth !== cachedWidth){
+        $(window).resize(function () {
+            var newWidth = $(window).width();
+            if (newWidth !== cachedWidth) {
 
-                         var win = window
-                        var doc = document
-                        var docElem = doc.documentElement
-                        var body = doc.getElementsByTagName('body')[0]
-                        x = win.innerWidth;
-                        if (x < 768) {
-                                alert("hola")
-                            }
-                    
-                    //DO RESIZE HERE
-                    // cachedWidth = newWidth;
+                var win = window
+                var doc = document
+                var docElem = doc.documentElement
+                var body = doc.getElementsByTagName('body')[0]
+                x = win.innerWidth;
+                if (x < 768) {
+                    alert("hola")
+
                 }
-            });
+                cachedWidth = newWidth;
 
-        function myScroll(left, top) {
-            if (isFuncNative(window.scrollTo)) {
-                window.scrollTo(left, top);
-            } else if (isFuncNative(window.scroll)) {
-                window.scroll(left, top);
-            } else {
-                document.body.scrollLeft = left;
-                document.body.scrollTop = top;
+                //DO RESIZE HERE
+                // 
             }
-        }
+        });
 
-   
+
+
+
 
         // function ready() {
         //     let menuTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset;
