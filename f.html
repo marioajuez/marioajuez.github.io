@@ -178,10 +178,10 @@
                     <div style="position: relative;">
                         <nav>
                             <ul>
-                                <li><a href="#about">Abouts</a></li>
+                                <li><a href="#about">About</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
-                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Bloger</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -327,24 +327,24 @@
             // var docElem = doc.documentElement
             var body = doc.getElementsByTagName('body')[0]
             x = win.innerWidth;
-            console.log(x);
-        
-            // var x = win.innerWidth || docElem.clientWidth || body.clientWidth
-
             if (x < 768) {
+
+                window.scroll(0,0)
                 e.removeClass("fixed"),
                 a.removeClass("stickyNav")
-                window.scroll(0,0)
-                // myScroll(0,0);
-                // e.removeClass("fixed"),
-                // a.removeClass("stickyNav")
-                // window.location.reload()
             }
-
-
         })
 
-
+        function myScroll(left, top) {
+            if (isFuncNative(window.scrollTo)) {
+                window.scrollTo(left, top);
+            } else if (isFuncNative(window.scroll)) {
+                window.scroll(left, top);
+            } else {
+                document.body.scrollLeft = left;
+                document.body.scrollTop = top;
+            }
+        }
 
    
 
