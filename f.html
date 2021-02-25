@@ -179,10 +179,10 @@
                     <div style="position: relative;">
                         <nav>
                             <ul>
-                                <li><a href="#about">Abouts</a></li>
+                                <li><a href="#about">About</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
-                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">mario</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -320,21 +320,40 @@
             // )
         // })
 
-        window.addEventListener("resize", function () {
+        // window.addEventListener("resize", function () {
 
-            // console.log(screen.width);
-            var win = window
-            var doc = document
-            // var docElem = doc.documentElement
-            var body = doc.getElementsByTagName('body')[0]
-            x = win.innerWidth;
-            if (x < 768) {
-                    alert("hola")
-                // window.scroll(x, 0)
-                // e.removeClass("fixed"),
-                // a.removeClass("stickyNav")
-            }
-        })
+        //     // console.log(screen.width);
+        //     var win = window
+        //     var doc = document
+        //     // var docElem = doc.documentElement
+        //     var body = doc.getElementsByTagName('body')[0]
+        //     x = win.innerWidth;
+        //     if (x < 768) {
+        //             alert("hola")
+        //         // window.scroll(x, 0)
+        //         // e.removeClass("fixed"),
+        //         // a.removeClass("stickyNav")
+        //     }
+        // })
+
+        var cachedWidth = $(window).width();
+            $(window).resize(function(){
+                var newWidth = $(window).width();
+                if(newWidth !== cachedWidth){
+
+                         var win = window
+                        var doc = document
+                        var docElem = doc.documentElement
+                        var body = doc.getElementsByTagName('body')[0]
+                        x = win.innerWidth;
+                        if (x < 768) {
+                                alert("hola")
+                            }
+                    
+                    //DO RESIZE HERE
+                    // cachedWidth = newWidth;
+                }
+            });
 
         function myScroll(left, top) {
             if (isFuncNative(window.scrollTo)) {
