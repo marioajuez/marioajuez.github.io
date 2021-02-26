@@ -162,7 +162,7 @@
                     <div style="position: relative;">
                         <nav>
                             <ul>
-                                <li><a href="#about">andres</a></li>
+                                <li><a href="#about">a</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
                                 <li><a href="#">Blog</a></li>
@@ -226,10 +226,10 @@
 
     
 
-        let btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
+       
         ["load", "resize"].forEach(event => {
             window.addEventListener(event, () => {
-              
+               let btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
                 window.addEventListener("scroll", () => {
                     let y = document['documentElement' || 'body'].scrollTop;
                     // if (window.innerWidth < 768) {
