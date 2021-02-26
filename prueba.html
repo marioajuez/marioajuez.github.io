@@ -212,11 +212,15 @@
             menuHamburger.classList.toggle("open")
             nav.classList.toggle("show-nav")
         });
-
-        function ready() {
+        
+        let menuTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset;
+        window.addEventListener("DOMContentLoaded", ()=>{
+            menuTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset;
+        })
+        
+        function ready() { 
             ["load", "resize"].forEach(event => {
                 window.addEventListener(event, () => {
-                    let menuTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset;
                     function scroll() {
                         var y = document['documentElement' || 'body'].scrollTop;
 
