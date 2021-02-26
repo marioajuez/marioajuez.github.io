@@ -213,9 +213,9 @@
         var a = $("nav")
         var e = $(".menu-hamburger");
 //                const btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
-       
+       var btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
         $(window).on("load resize", function () {
-            var btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
+            
             window.addEventListener("scroll", () => {
                     let y = document['documentElement' || 'body'].scrollTop;
                     // if (window.innerWidth < 768) {
