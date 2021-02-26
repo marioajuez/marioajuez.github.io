@@ -166,7 +166,7 @@
                     <div style="position: relative;">
                         <nav>
                             <ul>
-                                <li><a href="#about">sa</a></li>
+                                <li><a href="#about">About</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
                                 <li><a href="#">Blog</a></li>
@@ -214,7 +214,8 @@
         });
 
         function ready() {
-                window.addEventListener('resize', () => {
+            ["load", "resize"].forEach(event => {
+                window.addEventListener(event, () => {
                     let menuTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset;
                     function scroll() {
                         var y = document['documentElement' || 'body'].scrollTop;
@@ -230,6 +231,7 @@
                     }
                     window.addEventListener('scroll', scroll);
                 })
+            })
         }
         if (document.readyState == 'complete' || document.readyState == 'loaded') {
             ready();
