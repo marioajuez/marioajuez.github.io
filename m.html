@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <link href="main.css" rel="stylesheet">
@@ -171,7 +170,7 @@
                     <div style="position: relative;">
                         <nav>
                             <ul>
-                                <li><a href="#about">Abouts</a></li>
+                                <li><a href="#about">About</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
                                 <li><a href="#">Blog</a></li>
@@ -209,7 +208,7 @@
 
         const menuHamburger = document.querySelector(".menu-hamburger");
         const nav = document.querySelector('nav');
-        const width = window.innerWidth
+        let width = window.innerWidth
 
         menuHamburger.addEventListener("click", () => {
             menuHamburger.classList.toggle("open")
