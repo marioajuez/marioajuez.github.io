@@ -171,7 +171,7 @@
                     <div style="position: relative;">
                         <nav>
                             <ul>
-                                <li><a href="#about">abu</a></li>
+                                <li><a href="#about">aboutt</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
                                 <li><a href="#">Blosasg</a></li>
@@ -215,10 +215,10 @@
             menuHamburger.classList.toggle("open")
             nav.classList.toggle("show-nav")
         });
-
+        let btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
         ["load", "resize"].forEach(event => {
             window.addEventListener(event, () => {
-                let btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
+               
                 window.addEventListener("scroll", () => {
                     let y = document['documentElement' || 'body'].scrollTop;
 //                     if (window.innerWidth < 768) {
