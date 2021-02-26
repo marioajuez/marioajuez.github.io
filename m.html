@@ -221,7 +221,7 @@
                 let btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
                 window.addEventListener("scroll", () => {
                     let y = document['documentElement' || 'body'].scrollTop;
-                    if (window.innerWidth < 768) {
+//                     if (window.innerWidth < 768) {
                         if (y >= btnTop) {
                             menuHamburger.classList.add('fixed');
                             nav.classList.add("stickyNav");
@@ -230,7 +230,7 @@
                             menuHamburger.classList.remove('fixed');
                             nav.classList.remove("stickyNav");
                         }
-                    }
+//                     }
                 })
             })
         });
