@@ -215,24 +215,37 @@
             nav.classList.toggle("show-nav")
         });
 
-        ["load", "resize"].forEach(event => {
-            window.addEventListener(event, () => {
-                let btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
-                window.addEventListener("scroll", () => {
-                    let y = document['documentElement' || 'body'].scrollTop;
-                    if (window.innerWidth < 768) {
-                        if (y >= btnTop) {
-                            menuHamburger.classList.add('fixed');
-                            nav.classList.add("stickyNav");
-                        }
-                        else {
-                            menuHamburger.classList.remove('fixed');
-                            nav.classList.remove("stickyNav");
-                        }
-                    }
-                })
-            })
-        });
+//         ["load", "resize"].forEach(event => {
+//             window.addEventListener(event, () => {
+//                 let btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
+//                 window.addEventListener("scroll", () => {
+//                     let y = document['documentElement' || 'body'].scrollTop;
+//                     if (window.innerWidth < 768) {
+//                         if (y >= btnTop) {
+//                             menuHamburger.classList.add('fixed');
+//                             nav.classList.add("stickyNav");
+//                         }
+//                         else {
+//                             menuHamburger.classList.remove('fixed');
+//                             nav.classList.remove("stickyNav");
+//                         }
+//                     }
+//                 })
+//             })
+//         });
+             var a = $("nav"),
+            e = $(".menu-hamburger");
+
+        $(window).on("load resize", function () {
+            var o = $(".menu-hamburger").offset().top;
+            $(window).on("scroll", function () {
+
+                var s = $(window).scrollTop();
+                s >= o
+                    ? (e.addClass("fixed"), a.addClass("stickyNav"))
+                    : (e.removeClass("fixed"), a.removeClass("stickyNav"));
+            });
+        })
 
         window.addEventListener("resize", () => {
             if (window.innerWidth !== width)
