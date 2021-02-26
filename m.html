@@ -172,8 +172,8 @@
                     <div style="position: relative;">
                         <nav>
                             <ul>
-                                <li><a href="#about">Abouts</a></li>
-                                <li><a href="#">Contacts</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
                                 <li><a href="#">Blog</a></li>
                             </ul>
@@ -294,19 +294,20 @@
         })
 
 
-        let width = document.documentElement.clientWidth
+        let width = window.innerWidth
 
         window.addEventListener("resize", () => {
-            if (document.documentElement.clientWidth !== width){
+            // if (document.documentElement.clientWidth !== width){
+            //     if (window.innerWidth < 768) {
+            //             alert("object");
+            //         }
+            // }
+               if (window.innerWidth !== width){
                 if (window.innerWidth < 768) {
                         alert("object");
                     }
+                width = window.innerWidth
             }
-//                if (window.innerWidth !== width){
-//                 if (window.innerWidth < 768) {
-//                         alert("object");
-//                     }
-//             }
         })
     
 
