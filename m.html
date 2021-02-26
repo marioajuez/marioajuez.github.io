@@ -165,7 +165,7 @@
                                 <li><a href="#about">mario</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
-                                <li><a href="#">mario</a></li>
+                                <li><a href="#">and</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -215,13 +215,27 @@
 //                const btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
         var o = menuHamburger.getBoundingClientRect().top + window.pageYOffset
         $(window).on("load resize", function () {
+            
+            window.addEventListener("scroll", () => {
+                    let y = document['documentElement' || 'body'].scrollTop;
+                    // if (window.innerWidth < 768) {
+                        if (y >= btnTop) {
+                            menuHamburger.classList.add('fixed');
+                            nav.classList.add("stickyNav");
+                        }
+                        else {
+                            menuHamburger.classList.remove('fixed');
+                            nav.classList.remove("stickyNav");
+                        }
+                    // }
+                })
            
-            $(window).on("scroll", function () {
-                var s = $(window).scrollTop();
-                s >= o
-                    ? (e.addClass("fixed"), a.addClass("stickyNav"))
-                    : (e.removeClass("fixed"), a.removeClass("stickyNav"));
-            });
+//             $(window).on("scroll", function () {
+//                 var s = $(window).scrollTop();
+//                 s >= o
+//                     ? (e.addClass("fixed"), a.addClass("stickyNav"))
+//                     : (e.removeClass("fixed"), a.removeClass("stickyNav"));
+//             });
         })
 
 
