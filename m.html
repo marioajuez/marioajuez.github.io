@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width">
     <title>Document</title>
 
     <link href="main.css" rel="stylesheet">
@@ -135,6 +136,14 @@
         top: 0;
         width: auto;
     }
+
+    .fix {
+        left: 30px;
+        position: fixed;
+        right: 30px;
+        top: 0;
+        width: auto;
+    }
 </style>
 
 
@@ -162,10 +171,10 @@
                     <div style="position: relative;">
                         <nav>
                             <ul>
-                                <li><a href="#about">mario</a></li>
+                                <li><a href="#about">About</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
-                                <li><a href="#">lo</a></li>
+                                <li><a href="#">Blog</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -174,17 +183,13 @@
         </div>
     </div>
     <div class="menu-sticky">
-        <div class="menu-hamburger">
+        <div class="menu-hamburger" id="a8">
             <div class="linea-1"></div>
             <div class="linea-2"></div>
             <div class="linea-3"></div>
         </div>
     </div>
 
-
-
-
-
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -196,29 +201,35 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="js/scripts.js"></script> -->
 
-    <!-- <script src="main.js"></script> -->
     <script>
 
-        var menuHamburger = document.querySelector(".menu-hamburger");
-        var nav = document.querySelector('nav');
+        const menuHamburger = document.querySelector(".menu-hamburger");
+        const nav = document.querySelector('nav');
         let width = window.innerWidth
 
         menuHamburger.addEventListener("click", () => {
             menuHamburger.classList.toggle("open")
             nav.classList.toggle("show-nav")
-        }); 
+        });
 
-        var a = $("nav")
-        var e = $(".menu-hamburger");
-//                const btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
-       var btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
-        $(window).on("load resize", function () {
-            
-            window.addEventListener("scroll", () => {
+
+        let btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset;
+
+        ["load", "resize"].forEach(event => {
+            window.addEventListener(event, () => {
+                
+                if (btnTop !== menuHamburger.getBoundingClientRect().top + window.pageYOffset)
+                {
+                    btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
+                }
+
+                window.addEventListener("scroll", () => {
                     let y = document['documentElement' || 'body'].scrollTop;
-                    // if (window.innerWidth < 768) {
+                    if (window.innerWidth < 768) {
                         if (y >= btnTop) {
                             menuHamburger.classList.add('fixed');
                             nav.classList.add("stickyNav");
@@ -227,43 +238,20 @@
                             menuHamburger.classList.remove('fixed');
                             nav.classList.remove("stickyNav");
                         }
-                    // }
+                    }
                 })
-           
-//             $(window).on("scroll", function () {
-//                 var s = $(window).scrollTop();
-//                 s >= o
-//                     ? (e.addClass("fixed"), a.addClass("stickyNav"))
-//                     : (e.removeClass("fixed"), a.removeClass("stickyNav"));
-//             });
+            })
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth !== width)
+                if (window.innerWidth < 768){
+                    window.scrollTo(0, 0);
+                }     
+            width = window.innerWidth
         })
-
-
-    
-
-       
-//         ["load", "resize"].forEach(event => {
-//             window.addEventListener(event, () => {
-//                const btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
-//                 window.addEventListener("scroll", () => {
-//                     let y = document['documentElement' || 'body'].scrollTop;
-//                     // if (window.innerWidth < 768) {
-//                         if (y >= btnTop) {
-//                             menuHamburger.classList.add('fixed');
-//                             nav.classList.add("stickyNav");
-//                         }
-//                         else {
-//                             menuHamburger.classList.remove('fixed');
-//                             nav.classList.remove("stickyNav");
-//                         }
-//                     // }
-//                 })
-//             })
-//         });
-
     </script>
 </body>
-
 
 
 </html>
