@@ -165,7 +165,7 @@
                                 <li><a href="#about">mario</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
-                                <li><a href="#">and</a></li>
+                                <li><a href="#">a</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -213,9 +213,9 @@
         var a = $("nav")
         var e = $(".menu-hamburger");
 //                const btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
-        var o = menuHamburger.getBoundingClientRect().top + window.pageYOffset
+       
         $(window).on("load resize", function () {
-            
+            var o = menuHamburger.getBoundingClientRect().top + window.pageYOffset
             window.addEventListener("scroll", () => {
                     let y = document['documentElement' || 'body'].scrollTop;
                     // if (window.innerWidth < 768) {
