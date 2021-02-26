@@ -171,7 +171,7 @@
                     <div style="position: relative;">
                         <nav>
                             <ul>
-                                <li><a href="#about">About</a></li>
+                                <li><a href="#about">lo</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
                                 <li><a href="#">Blog</a></li>
@@ -210,6 +210,8 @@
         const menuHamburger = document.querySelector(".menu-hamburger");
         const nav = document.querySelector('nav');
         let width = window.innerWidth
+        let height = window.innerHeight
+
 
         menuHamburger.addEventListener("click", () => {
             menuHamburger.classList.toggle("open")
@@ -220,10 +222,7 @@
         let btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset;
 
         ["load", "resize"].forEach(event => {
-            window.addEventListener(event, () => {
-                
-
-            if (window.innerWidth !== width){
+            window.addEventListener(event, () => { 
                 window.addEventListener("scroll", () => {
                     let y = document['documentElement' || 'body'].scrollTop;
                     if (window.innerWidth < 768) {
@@ -237,15 +236,13 @@
                         }
                     }
                 })
-            }
-                width = window.innerWidth
-
             })
         });
 
         window.addEventListener("resize", () => {
             if (window.innerWidth !== width)
                 if (window.innerWidth < 768){
+                    location.reload();
                     window.scrollTo(0, 0);
                 }     
             width = window.innerWidth
