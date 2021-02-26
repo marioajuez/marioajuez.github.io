@@ -162,7 +162,7 @@
                     <div style="position: relative;">
                         <nav>
                             <ul>
-                                <li><a href="#about">mario</a></li>
+                                <li><a href="#about">andres</a></li>
                                 <li><a href="#">Contact</a></li>
                                 <li><a href="#">Meet the team</a></li>
                                 <li><a href="#">Blog</a></li>
@@ -201,8 +201,8 @@
     <!-- <script src="main.js"></script> -->
     <script>
 
-        const menuHamburger = document.querySelector(".menu-hamburger");
-        const nav = document.querySelector('nav');
+        var menuHamburger = document.querySelector(".menu-hamburger");
+        var nav = document.querySelector('nav');
         let width = window.innerWidth
 
         menuHamburger.addEventListener("click", () => {
@@ -210,41 +210,41 @@
             nav.classList.toggle("show-nav")
         }); 
 
-        var a = $("nav")
-        var e = $(".menu-hamburger");
-        var o = e.offset().top;
-        $(window).on("load resize", function () {
+//         var a = $("nav")
+//         var e = $(".menu-hamburger");
+//         var o = e.offset().top;
+//         $(window).on("load resize", function () {
            
-            $(window).on("scroll", function () {
-                var s = $(window).scrollTop();
-                s >= o
-                    ? (e.addClass("fixed"), a.addClass("stickyNav"))
-                    : (e.removeClass("fixed"), a.removeClass("stickyNav"));
-            });
-        })
+//             $(window).on("scroll", function () {
+//                 var s = $(window).scrollTop();
+//                 s >= o
+//                     ? (e.addClass("fixed"), a.addClass("stickyNav"))
+//                     : (e.removeClass("fixed"), a.removeClass("stickyNav"));
+//             });
+//         })
 
 
     
 
-        // let btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
-        // ["load", "resize"].forEach(event => {
-        //     window.addEventListener(event, () => {
+        let btnTop = menuHamburger.getBoundingClientRect().top + window.pageYOffset
+        ["load", "resize"].forEach(event => {
+            window.addEventListener(event, () => {
               
-        //         window.addEventListener("scroll", () => {
-        //             let y = document['documentElement' || 'body'].scrollTop;
-        //             // if (window.innerWidth < 768) {
-        //                 if (y >= btnTop) {
-        //                     menuHamburger.classList.add('fixed');
-        //                     nav.classList.add("stickyNav");
-        //                 }
-        //                 else {
-        //                     menuHamburger.classList.remove('fixed');
-        //                     nav.classList.remove("stickyNav");
-        //                 }
-        //             // }
-        //         })
-        //     })
-        // });
+                window.addEventListener("scroll", () => {
+                    let y = document['documentElement' || 'body'].scrollTop;
+                    // if (window.innerWidth < 768) {
+                        if (y >= btnTop) {
+                            menuHamburger.classList.add('fixed');
+                            nav.classList.add("stickyNav");
+                        }
+                        else {
+                            menuHamburger.classList.remove('fixed');
+                            nav.classList.remove("stickyNav");
+                        }
+                    // }
+                })
+            })
+        });
 
     </script>
 </body>
