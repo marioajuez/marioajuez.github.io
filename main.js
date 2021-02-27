@@ -38,4 +38,20 @@ window.addEventListener(event, () => {
     }
   width = window.innerWidth;
 });
+<<<<<<< HEAD
 })
+=======
+
+let btnSticky = document.querySelector(".menu-sticky");
+let menuHamburgerTop = btnSticky.offsetTop;
+
+
+let sticky = () => {
+    if (window.scrollY >= menuHamburgerTop)
+        menuHamburger.classList.add("stick")
+    else
+      menuHamburger.classList.remove("stick")
+};
+
+window.addEventListener("scroll", sticky )
+>>>>>>> refs/remotes/origin/main
