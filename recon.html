@@ -8,15 +8,111 @@
     <title>Document</title>
 
     <link href="main.css" rel="stylesheet">
-    <link href="menu-hamburger.css" rel="stylesheet">
+    <link href="css/menu-hamburger.css" rel="stylesheet">
 </head>
 
 <style>
+    .content {
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .sidebar {
+        background: #4527b0;
+        text-align: center;
+        box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.3);
+        color: #fff;
+        padding: 27px 0 0;
+        height: 100%;
+    }
+
+    .avatar-profile {
+        border-radius: 140px;
+        width: 60%;
+    }
+
+    .profile {
+        text-align: center;
+        padding: 9px 0 12px;
+    }
+
+    .profile > img {
+        vertical-align: middle;
+        border: 0;
+    }
+ 
+    .menu {
+        position: relative;
+    }
+
+    nav {
+        padding: 20px 30px;
+        background: white;
+    }
+
+
+    nav li {
+        /* font: 900 13px "Titillium Web",serif; */
+        font: 1em/1.3 Arial, Helvetica, sans-serif;
+        padding: 10px 0;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    li,
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li a {
+        padding: 0;
+    }
+
+    li {
+        text-align: center;
+        list-style-type: none;
+    }
+
+    a {
+        color: #232323;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #9c27b0;
+    }
+
+
+
+    .stickyNav {
+        left: 30px;
+        position: fixed;
+        right: 30px;
+        width: auto;
+    }
+
+    .show-nav {
+        opacity: 1;
+        transform: translateY(0px);
+        visibility: visible;
+    }
+
+    .fixed {
+        left: 30px;
+        position: fixed;
+        right: 30px;
+        top: 0;
+        width: auto;
+    }
+
     @media only screen and (max-width: 767px) {
 
         .content,
         .menu-sticky {
-            padding: 0 30px !important;
+            padding: 0 30px;
         }
 
         nav {
@@ -32,14 +128,6 @@
         }
     }
 
-    .sidebar {
-        background: #4527b0;
-        text-align: center;
-        box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.3);
-        color: #fff;
-        padding: 27px 0 0;
-        height: 100%;
-    }
 
     @media only screen and (min-width: 768px) {
         .sidebar {
@@ -50,15 +138,8 @@
             opacity: 0;
             position: absolute;
             visibility: hidden;
-            /* display: none; */
+            display: none;
         }
-    }
-
-    .content {
-        margin-right: auto;
-        margin-left: auto;
-        padding-left: 15px;
-        padding-right: 15px;
     }
 
     @media (min-width: 768px) {
@@ -80,39 +161,9 @@
     }
 
     @media (min-width: 768px) {
-        .col-sm-2 {
+        .sidebar {
             width: 16.66666667%;
         }
-    }
-
-    * {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-
-    *:before,
-    *:after {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-
-    .content:before {
-        content: " ";
-        display: table;
-    }
-
-    .row,
-    li,
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-
-    nav {
-        box-shadow: 0 3px 10px 3px rgb(0 0 0 / 30%);
-        padding: 20px 30px;
     }
 </style>
 
@@ -120,39 +171,23 @@
 <body>
 
     <div class="content">
-        <div class="row">
-            <div class="col-sm-2" style="   
-                padding: 0;
-                position: relative;
-                top: 0;
-                letter-spacing: 1px;
-                text-transform: uppercase;">
-
-                <div class="sidebar col-sm-2">
-                    <img style='
-                    border-radius: 140px;
-                    width: 60%;' src="images/avatar.jpg" alt="">
-
-                    <div style="
-                        text-align: center;
-                        padding: 9px 0 12px;">
-                        <img alt="signature" src="images/signature.png">
-                    </div>
-                    <div style="position: relative;">
-                        <nav>
-                            <ul>
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">Meet the team</a></li>
-                                <li><a href="#">Blog</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+        <div class="sidebar">
+            <img class="avatar-profile" src="images/avatar.jpg" alt="">
+            <div class="profile">
+                <img alt="signature" src="images/signature.png">
+            </div>
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Meet the team</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
-
     <div class="menu-sticky">
         <div class="menu-hamburger">
             <div class="linea-1"></div>
@@ -163,6 +198,8 @@
 
 
 
+
+
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -175,18 +212,7 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
-    <script src="main.js"></script>
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <script src="js/menu-hamburger.js"></script>
 </body>
 
 

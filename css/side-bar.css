@@ -1,0 +1,152 @@
+.content {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.menu {
+  position: relative;
+}
+.sidebar {
+  background: #4527b0;
+  text-align: center;
+  box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 27px 0 0;
+  height: 100%;
+}
+
+a:focus{
+  background: red;
+}
+
+.avatar-profile {
+  border-radius: 140px;
+  width: 60%;
+}
+.profile {
+  text-align: center;
+  padding: 9px 0 12px;
+}
+.sidebar img {
+  vertical-align: middle;
+  border: 0;
+}
+
+li,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  padding: 20px 30px;
+  background: white;
+}
+
+nav li {
+  /* font: 900 13px "Titillium Web",serif; */
+  /* font-family: Akkurat; */
+  font: 1em/1.3 Arial, Helvetica, sans-serif;
+  padding: 10px 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+nav li a {
+  padding: 0;
+}
+
+li {
+  text-align: center;
+  list-style-type: none;
+}
+
+a {
+  color: #232323;
+  text-decoration: none;
+}
+a:hover {
+  color: #b02727;
+}
+
+/* properties used for design responsive (javascript) */
+
+.show-nav {
+  opacity: 1;
+  transform: translateY(0px);
+  visibility: visible;
+}
+
+.fixed {
+  left: 30px;
+  position: fixed;
+  right: 30px;
+  top: 0;
+  width: auto;
+}
+
+.stickyNav {
+  left: 30px;
+  position: fixed;
+  right: 30px;
+  width: auto;
+}
+
+/* SIDE BAR RESPONSIVE */
+
+@media only screen and (max-width: 767px) {
+  .content,
+  .menu-sticky {
+    padding: 0 30px;
+  }
+
+  nav {
+    box-shadow: 0 3px 10px 3px rgb(0 0 0 / 30%);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.9s ease-out 0s;
+    visibility: hidden;
+    z-index: 997;
+    position: absolute;
+    width: 100%;
+    top: 41px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+  }
+
+  .menu-sticky {
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .content {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content {
+    width: 1170px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    width: 16.66666667%;
+  }
+}
