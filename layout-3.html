@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+
+body {
+	height: 100%;
+	background: #eeeecc;
+	color: #331d0e;
+	font-family: 'Roboto', arial, sans-serif;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: row-reverse;
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+aside {
+	width: 20rem;
+	align-self: stretch;
+	padding: 2rem;
+	transition: transform .3s;
+}
+/* preload icon font */
+aside:before,
+aside:after {
+	font-family: 'fontello';
+	font-size: 0px;
+	visibility: hidden;
+	content: '\e800';
+}
+aside:after {
+	content: '\e801';
+}
+
+nav {
+	position: fixed;
+	height: 100%;
+	overflow-y: hidden;
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/burst-01.png) center 90% no-repeat;
+	background-size: 60%;
+}
+
+nav ul {
+	background: #eeeecc;
+	margin: 2rem 0;
+}
+
+nav li {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 4rem;
+	font-weight: 700;
+	line-height: 1;
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+	border-bottom: solid 2px #53a090;
+}
+
+nav li a {
+	color: #53a090;
+	text-decoration: none;
+	text-shadow:
+		1px 1px 0px #eeeecc,
+		3px 3px 0px #331d0e;
+	transition: color .15s;
+}
+
+nav li a:hover {
+	color: #c53939;
+}
+
+.menu-toggle {
+	position: relative;
+	display: none;
+	width: 4rem;
+	cursor: pointer;
+}
+
+.menu-toggle:after {
+	font-family: 'fontello';
+	font-size: 3rem;
+	content: '\e800';
+	position: absolute;
+	top: 0;
+	left: 1.4rem;
+	color: #53a090;
+}
+
+.menu-toggle:hover:after {
+	color: #c53939;
+}
+
+.open .menu-toggle:after {
+	content: '\e801';
+	font-size: 3.4rem;
+}
+
+main {
+	flex: 2;
+	background: rgba(255,255,255,0.8);
+	margin: 2rem 0;
+	padding: 3rem;
+}
+
+h1 {
+	color: #c53939;
+	font-family: 'desigersbold';
+	font-size: 5.2rem;
+	line-height: 1.3;
+	margin-bottom: 3rem;
+	text-shadow:
+		1px 1px 0px #eeeecc,
+		3px 3px 0px #331d0e;
+}
+
+p {
+	font-size: 1.8rem;
+	font-weight: 400;
+	line-height: 2.6rem;
+	margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+	.wrapper {
+		display: block;
+	}
+	
+	main {
+		padding: 2rem 4rem 2rem 8rem;
+	}
+	
+	aside {
+		display: flex;
+		flex-direction: row;
+		position: fixed;
+		top: 0;
+		width: 24rem;
+		transform: translateX(-200px);
+		height: 100%;
+		padding-right: 0;
+		background: #eeeecc;
+	}
+	
+	aside.open {
+		transform: translateX(0);
+	}
+
+	.menu-toggle {
+		display: block;
+		padding: 0 1rem;
+		transition: all .3s;
+	}
+	
+	nav {
+		position: relative;
+	}
+}
+
+a {
+	outline: none;
+}
+
+hr {
+	border: 0;
+	border-top: 2px solid #c53939;
+	margin-bottom: 2rem;
+}
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+        <main role="main">
+            <h1>Fixed, Stretched Flexbox Sidebar Nav</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id viverra sem. Vivamus mattis cursus quam eget consectetur? Quisque fermentum et dui quis ullamcorper. Morbi facilisis ante nulla, non laoreet ligula faucibus quis. Morbi sit amet metus posuere, gravida nunc id, vulputate elit? Suspendisse vel ligula tincidunt, aliquet tellus ut, vehicula ante. Vestibulum non urna posuere, interdum ligula in, egestas odio.</p>
+            <p>Proin sed commodo ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla et urna in lorem tincidunt hendrerit. Cras et dolor euismod diam malesuada sodales eu ullamcorper nunc! Curabitur accumsan diam libero, sed molestie nisl convallis vel. Sed ut orci erat. Vivamus rutrum porta consectetur? Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc mattis a dolor et finibus!</p>
+            <p>Phasellus ultricies est id dignissim faucibus. Cras finibus; orci ut malesuada gravida, felis magna pulvinar sapien, nec dictum massa leo a quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut massa ipsum, suscipit ut pulvinar quis, ultrices sit amet velit. Nunc sit amet commodo ligula. Mauris metus nisi, mollis sit amet efficitur in, pretium a velit. Ut quis euismod diam. Vestibulum sed semper nisl, sit amet commodo risus. Maecenas sit amet erat id nisl scelerisque vestibulum. Aenean sagittis congue odio, nec vehicula neque tempus non? In hac habitasse platea dictumst. Pellentesque pharetra nibh vel vehicula suscipit. Phasellus eget consectetur mi, eu vehicula nisl. Donec suscipit orci odio, non commodo ante viverra non. In sodales nulla aliquet ultricies laoreet.</p>
+            <hr />
+            <p>Sed a elit metus. Nullam sapien odio, convallis id tortor non, interdum mattis dui? Phasellus ac pellentesque justo! Nam nec suscipit nunc. Aliquam non libero sed felis blandit semper at sed enim. Sed egestas; quam in laoreet vestibulum, metus magna tristique massa, non facilisis magna nulla ac elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut cursus vitae mi sed elementum. Donec luctus risus ac dolor lacinia placerat. Suspendisse arcu eros, commodo sit amet ipsum in, lobortis malesuada orci. Maecenas ac augue ac lorem auctor pellentesque?</p>
+            <p>Aliquam enim massa, sollicitudin ac nisl a, viverra ultricies dui. Vivamus vitae augue elit? Quisque ultricies, est ac egestas pharetra, erat ligula rhoncus nunc; nec porttitor ligula nunc viverra felis! Morbi viverra ante et suscipit aliquet. Suspendisse potenti. Cras gravida justo sed justo lobortis, accumsan malesuada risus aliquet. Phasellus sit amet porta risus! Sed pellentesque lacinia est; vel mollis tellus. Aenean libero nibh, lobortis ut tempus id, scelerisque eu orci. Aenean lacus nisl, placerat at auctor quis, rutrum sit amet orci! Praesent egestas lorem et condimentum vestibulum. Suspendisse nec mauris est? Vivamus augue ante, imperdiet eget felis sit amet, fringilla rutrum lacus. Aenean quis interdum ex, quis iaculis elit? Phasellus finibus magna est, consectetur egestas mauris efficitur nec. Aenean ultricies pharetra nisi non auctor!</p>
+            <p>Curabitur tincidunt id diam vitae aliquam. Nam accumsan est lacus; posuere mattis mauris laoreet facilisis. Sed in turpis justo. Duis sit amet bibendum velit, in rutrum dui. Sed pellentesque condimentum consequat. Mauris sed magna pharetra, sodales risus et, vestibulum tortor. Praesent congue, elit eu imperdiet placerat, nisi justo maximus ipsum; in sodales erat risus vel orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin sagittis sit amet erat at sollicitudin. Suspendisse potenti. Nullam id urna pellentesque arcu fermentum interdum at eu lorem.</p>
+            <p>Nunc non vehicula lectus, nec faucibus mauris. Sed est justo, laoreet vitae orci nec, convallis interdum massa. Aenean non arcu ligula. Phasellus condimentum arcu velit, at pellentesque urna condimentum et. Curabitur at aliquet nibh. Nunc eleifend justo volutpat lacinia dapibus. Nunc finibus felis sed sem consequat viverra! Ut sollicitudin feugiat rutrum. Nunc sem nunc, condimentum non accumsan ac, imperdie</p>
+        </main>
+        <aside>
+            <nav role='navigation'>
+                <a href="http://ccdzine.com/" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/cool-logo-01.jpg" /></a>
+              <ul>
+                 <li><a href="#">Flexbox</a></li>
+                 <li><a href="#">Grid</a></li>
+                 <li><a href="#">Hover Cars</a></li>
+                 <li><a href="#">Home</a></li>
+              </ul>
+            </nav>
+            <div class="menu-toggle"></div>
+        </aside>
+    </div>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="js/jquery.min.js"></script>
+
+    <script>
+      jQuery(document).ready(function () {
+        jQuery(".menu-toggle").click(function () {
+          jQuery("aside").toggleClass("open");
+        });
+        jQuery(".nav li").click(function () {
+          jQuery(".menu-toggle").removeClass("open");
+        });
+      });
+    </script>
+  </body>
+</html>

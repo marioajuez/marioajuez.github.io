@@ -11,6 +11,100 @@
     <link href="css/menu-hamburger.css" rel="stylesheet">
     <link href="css/side-bar.css" rel="stylesheet">
 </head>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+     body {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .side-bar {
+        width: 160px;
+        height: 100vh;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav ul {
+        padding: 0;
+    }
+
+    nav li {
+        list-style: none;
+    }
+
+    nav li a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        padding: 0.6rem 0.3rem;
+        font-weight: 400;
+        transition: all ease-out 250ms;
+    }
+
+    nav li a:hover {
+        color: rgb(0, 4, 255);
+    }
+
+    .main-content {
+        margin-left: 400px;
+        margin-right: 20px;
+    }
+
+    section {
+        background-color: #f2f2f2;
+        height: 90vh;
+        margin: 0;
+        padding: 2.5rem 4rem;
+    }
+
+    section:nth-of-type(2n) {
+        background-color: #ccc;
+    }
+
+    section:last-of-type {
+        height: 100vh;
+    }
+
+    h1 {
+        color: #444;
+        font-weight: 600;
+    }
+
+    .active {
+        color: rgb(11, 97, 211);
+        font-weight: 600;
+    } 
+
+    /* section div{
+        border: solid 1px;
+        margin: 10px;
+        padding: 5px;
+        flex-grow: 1;
+        width: 72%;
+        word-wrap: break-word;
+    }
+    section{
+        border: solid 1px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    } 
+    @media screen and (MAX-width: 768px) {
+        section {
+            align-items: center;
+            width: auto;
+            padding: 30px;
+        }        
+    } */
+</style>
+
 <body>
     <!-- SIDE BAR -->
     <div class="content">
@@ -21,11 +115,13 @@
             </div>
             <div class="menu">
                 <nav>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Meet the team</a></li>
-                        <li><a href="#">Blog</a></li>
+                    <ul class="navigation">
+                        <li>
+                            <a href="#about">About</a>
+                            <a href="#portfolio">Portfolio</a>
+                            <a href="#resume">Resume</a>
+                            <a href="#contact">Contact</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -43,20 +139,44 @@
     </div>
     <!-- END HAMBURGER ONLY RESPONSIVE-->
 
-
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+    <div class="main-content">
+        <section id="about">
+            about
+        </section>
+        <section id="portfolio">
+            portfolio
+        </section>
+        <section id="resume">
+            resume
+        </section>
+        <section id="contact">
+            contact
+        </section>
+    </div>
 
     <script src="js/menu-hamburger.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        
+        const sections = document.querySelectorAll("section[id]");
+        window.addEventListener("scroll", () => {
+            let scrollY = window.pageYOffset;
+            sections.forEach(section => {
+
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 50;
+                const sectionId = section.getAttribute("id");
+                const selector = document.querySelector(".navigation a[href*=" + sectionId + "]")
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight)
+                    selector.classList.add("active");
+                else
+                    selector.classList.remove("active");
+            })
+        })
+
+
+    </script>
 </body>
 
 

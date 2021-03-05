@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 2rem;
+}
+span {
+  color: red;
+}
+.grid-row-12-columns {
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(12, minmax(min-content, 1fr));
+  margin: 1rem 0;
+  outline: ridge lightslategrey;
+}
+.grid-row-12-columns > * {
+  background-color: lightblue;
+}
+.grid-row-12-columns .one {
+  grid-column-start: span 1;
+  padding: 0 0.5rem;
+}
+.grid-row-12-columns .offset-one {
+  margin-left: 8.3333333333%;
+}
+.grid-row-12-columns .two {
+  grid-column-start: span 2;
+  padding: 0 0.5rem;
+}
+.grid-row-12-columns .offset-two {
+  margin-left: 16.6666666667%;
+}
+.grid-row-12-columns .three {
+  grid-column-start: span 3;
+  padding: 0 0.5rem;
+}
+.grid-row-12-columns .offset-three {
+  margin-left: 25%;
+}
+.grid-row-12-columns .four {
+  grid-column-start: span 4;
+  padding: 0 0.5rem;
+}
+.grid-row-12-columns .offset-four {
+  margin-left: 33.3333333333%;
+}
+.grid-row-12-columns .five {
+  grid-column-start: span 5;
+  padding: 0 0.5rem;
+}
+.grid-row-12-columns .offset-five {
+  margin-left: 41.6666666667%;
+}
+.grid-row-12-columns .six {
+  grid-column-start: span 6;
+  padding: 0 0.5rem;
+}
+.grid-row-12-columns .offset-six {
+  margin-left: 50%;
+}
+.grid-row-12-columns .seven {
+  grid-column-start: span 7;
+  padding: 0 0.5rem;
+}
+.grid-row-12-columns .offset-seven {
+  margin-left: 58.3333333333%;
+}
+.grid-row-12-columns .eight {
+  grid-column-start: span 8;
+  padding: 0 0.5rem;
+}
+.grid-row-12-columns .offset-eight {
+  margin-left: 66.6666666667%;
+}
+.grid-row-12-columns .nine {
+  grid-column-start: span 9;
+  padding: 0 0.5rem;
+}
+.grid-row-12-columns .offset-nine {
+  margin-left: 75%;
+}
+.grid-row-12-columns .ten {
+  grid-column-start: span 10;
+  padding: 0 0.5rem;
+}
+.grid-row-12-columns .offset-ten {
+  margin-left: 83.3333333333%;
+}
+.grid-row-12-columns .eleven {
+  grid-column-start: span 11;
+  padding: 0 0.5rem;
+}
+.grid-row-12-columns .offset-eleven {
+  margin-left: 91.6666666667%;
+}
+.grid-row-12-columns .twelve {
+  grid-column-start: span 12;
+  padding: 0 0.5rem;
+}
+.grid-row-12-columns .offset-twelve {
+  margin-left: 100%;
+}
+.flexy-grid {
+  width: 100%;
+  margin: 1rem 0;
+}
+.flexy-grid__row {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  outline: ridge fuchsia;
+}
+.flexy-grid__col-1 {
+  flex-basis: 8.3333333333%;
+  max-width: 8.3333333333%;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 0.5rem;
+  background-color: lightseagreen;
+  outline: ridge black;
+}
+.flexy-grid__col-offset-1 {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+  margin-left: 8.3333333333%;
+  background-color: lightsteelblue;
+}
+.flexy-grid__col-2 {
+  flex-basis: 16.6666666667%;
+  max-width: 16.6666666667%;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 0.5rem;
+  background-color: lightseagreen;
+  outline: ridge black;
+}
+.flexy-grid__col-offset-2 {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+  margin-left: 16.6666666667%;
+  background-color: lightsteelblue;
+}
+.flexy-grid__col-3 {
+  flex-basis: 25%;
+  max-width: 25%;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 0.5rem;
+  background-color: lightseagreen;
+  outline: ridge black;
+}
+.flexy-grid__col-offset-3 {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+  margin-left: 25%;
+  background-color: lightsteelblue;
+}
+.flexy-grid__col-4 {
+  flex-basis: 33.3333333333%;
+  max-width: 33.3333333333%;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 0.5rem;
+  background-color: lightseagreen;
+  outline: ridge black;
+}
+.flexy-grid__col-offset-4 {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+  margin-left: 33.3333333333%;
+  background-color: lightsteelblue;
+}
+.flexy-grid__col-5 {
+  flex-basis: 41.6666666667%;
+  max-width: 41.6666666667%;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 0.5rem;
+  background-color: lightseagreen;
+  outline: ridge black;
+}
+.flexy-grid__col-offset-5 {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+  margin-left: 41.6666666667%;
+  background-color: lightsteelblue;
+}
+.flexy-grid__col-6 {
+  flex-basis: 50%;
+  max-width: 50%;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 0.5rem;
+  background-color: lightseagreen;
+  outline: ridge black;
+}
+.flexy-grid__col-offset-6 {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+  margin-left: 50%;
+  background-color: lightsteelblue;
+}
+.flexy-grid__col-7 {
+  flex-basis: 58.3333333333%;
+  max-width: 58.3333333333%;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 0.5rem;
+  background-color: lightseagreen;
+  outline: ridge black;
+}
+.flexy-grid__col-offset-7 {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+  margin-left: 58.3333333333%;
+  background-color: lightsteelblue;
+}
+.flexy-grid__col-8 {
+  flex-basis: 66.6666666667%;
+  max-width: 66.6666666667%;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 0.5rem;
+  background-color: lightseagreen;
+  outline: ridge black;
+}
+.flexy-grid__col-offset-8 {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+  margin-left: 66.6666666667%;
+  background-color: lightsteelblue;
+}
+.flexy-grid__col-9 {
+  flex-basis: 75%;
+  max-width: 75%;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 0.5rem;
+  background-color: lightseagreen;
+  outline: ridge black;
+}
+.flexy-grid__col-offset-9 {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+  margin-left: 75%;
+  background-color: lightsteelblue;
+}
+.flexy-grid__col-10 {
+  flex-basis: 83.3333333333%;
+  max-width: 83.3333333333%;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 0.5rem;
+  background-color: lightseagreen;
+  outline: ridge black;
+}
+.flexy-grid__col-offset-10 {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+  margin-left: 83.3333333333%;
+  background-color: lightsteelblue;
+}
+.flexy-grid__col-11 {
+  flex-basis: 91.6666666667%;
+  max-width: 91.6666666667%;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 0.5rem;
+  background-color: lightseagreen;
+  outline: ridge black;
+}
+.flexy-grid__col-offset-11 {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+  margin-left: 91.6666666667%;
+  background-color: lightsteelblue;
+}
+.flexy-grid__col-12 {
+  flex-basis: 100%;
+  max-width: 100%;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 0.5rem;
+  background-color: lightseagreen;
+  outline: ridge black;
+}
+.flexy-grid__col-offset-12 {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+  margin-left: 100%;
+  background-color: lightsteelblue;
+}
+
+</style>
+</head>
+
+
+<body>
+    <h2>Use case 1</h2>
+<p>
+	I'd like to use offsets with columns that have the same width,
+	like I can w/ flexbox
+</p>
+<div class="grid-row-12-columns">
+	<div class="two">
+		2 columns
+		<hr />
+		CSS Grid
+	</div>
+	<div class="two">2 columns</div>
+	<div class="two offset-two">2 columns, w/2 column offset</div>
+	<div class="two">2 columns</div>
+		<div class="two">2 columns</div>
+</div>
+
+<div class="flexy-grid">
+	<div class="flexy-grid__row">
+		<div class="flexy-grid__col-2">
+			2 columns
+			<hr />
+			Flexbox
+		</div>
+		<div class="flexy-grid__col-2">2 columns</div>
+		<div class="flexy-grid__col-2 flexy-grid__col-offset-2">
+			2 columns w/2 column offset
+		</div>
+		<div class="flexy-grid__col-2">2 columns</div>
+		<div class="flexy-grid__col-2">2 columns</div>
+		<div class="flexy-grid__col-2">2 columns</div>
+	</div>
+</div>
+
+<hr /><hr /><hr /><hr />
+
+<h2>Use case 2</h2>
+<p>
+	I'd like to use offsets with varied width columns,
+	like I can with flexbox
+</p>
+<div class="grid-row-12-columns">
+	<div class="three">
+		3 columns
+		<hr />
+		CSS Grid
+	</div>
+	<div class="two offset-two">2 columns w/2 offset columns</div>
+	<div class="five">5 columns</div>
+</div>
+
+<div class="flexy-grid">
+	<div class="flexy-grid__row">
+		<div class="flexy-grid__col-3">
+			3 columns
+			<hr />
+			Flexbox
+		</div>
+		<div class="flexy-grid__col-2 flexy-grid__col-offset-2">
+			2 columns,w/2 column offset
+		</div>
+		<div class="flexy-grid__col-5">5 columns</div>
+	</div>
+</div>
+</body>
+</html>
