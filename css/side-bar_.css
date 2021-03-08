@@ -95,6 +95,8 @@ h1 {
     transform: translateY(-3px);
     visibility: hidden;
     opacity: 0;
+    position: absolute;
+    width: 100%;
   }
   nav.show-nav{
     transform: translateY(1px);
