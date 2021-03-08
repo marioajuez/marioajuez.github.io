@@ -8,7 +8,7 @@
   position: relative;
 }
 .sidebar {
-  background: #4527b0;
+  background: radial-gradient(rgb(48 120 177), rgba(0, 0, 0));
   text-align: center;
   box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.3);
   color: #fff;
@@ -16,9 +16,6 @@
   height: 100%;
 }
 
-a:focus{
-  background: red;
-}
 
 .avatar-profile {
   border-radius: 140px;
@@ -31,6 +28,7 @@ a:focus{
 .sidebar img {
   vertical-align: middle;
   border: 0;
+  margin: auto;
 }
 
 li,
@@ -63,11 +61,11 @@ li {
 }
 
 a {
-  color: #232323;
+  color: #2c2c2c;
   text-decoration: none;
 }
 a:hover {
-  color: #b02727;
+  color: #012435;
 }
 
 /* properties used for design responsive (javascript) */
