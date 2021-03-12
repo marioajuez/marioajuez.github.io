@@ -185,7 +185,8 @@
                 bottom: auto;
             }
 
-            .menu-sticky, .sidebar{
+            .menu-sticky,
+            .sidebar {
                 position: fixed;
                 z-index: 2;
                 width: 80%;
@@ -244,7 +245,7 @@
             </div>
             <nav class="menu navigation" id="menu-responsive"></nav>
         </div>
-     
+
         <nav class="menu navigation" id="menu-full"></nav>
     </aside>
 
@@ -253,7 +254,7 @@
 
     <main>
         <section id="about">
-            about
+            aboutaa
         </section>
         <section id="portfolio">
             portfolio
@@ -275,39 +276,49 @@
         let head = document.querySelector(".sidebar")
         let menu = document.querySelector(".menu-sticky")
         let main = document.querySelector("main")
-   
 
-        main.style.top = (menu.clientHeight + head.clientHeight) + "px" 
+
+        main.style.top = (menu.clientHeight + head.clientHeight) + "px"
 
         let width = window.innerWidth
         let offset = 0;
         let lastScroll = 0;
-      
+
+        // var cachedWidth = $(window).width();
+        console.log();
 
 
-        for (let event of ["load", "scroll"]) {
+
+        for (let event of ["load", "resize", "scroll"]) {
             window.addEventListener(event, () => {
+
+
 
                 let scrollY = document['documentElement' || 'body'].scrollTop;
                 let headHeight = head.clientHeight;
 
-                if (window.innerWidth < 730) {
-                    diff = scrollY - lastScroll;
 
-                    if (offset >= headHeight) menu.style.top = 0
+                if (window.screen.width !== $(window).width()) {
 
-                    if (offset + diff > headHeight) offset = headHeight
-                    else if (scrollY < 0) offset = 0
-                    else offset = offset + diff
 
-                    if (offset < 0) offset = 0
+                    if (window.innerWidth < 730) {
+                        diff = scrollY - lastScroll;
 
-                    menu.style.top = headHeight + (-offset) + 'px';
-                    head.style.top = (-offset) + 'px';
-                    lastScroll = scrollY;
+                        if (offset >= headHeight) menu.style.top = 0
+
+                        if (offset + diff > headHeight) offset = headHeight
+                        else if (scrollY < 0) offset = 0
+                        else offset = offset + diff
+
+                        if (offset < 0) offset = 0
+
+                        menu.style.top = headHeight + (-offset) + 'px';
+                        head.style.top = (-offset) + 'px';
+                        lastScroll = scrollY;
+                    }
+                    else
+                        head.style.top = '40px';
                 }
-                else
-                    head.style.top = '40px';
             })
         }
 
