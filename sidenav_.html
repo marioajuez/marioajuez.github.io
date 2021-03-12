@@ -189,13 +189,14 @@
             .sidebar {
                 position: fixed;
                 z-index: 2;
-                width: 80%;
-                left: 10%;
+                width: 100%;
+                /* left: 10%; */
             }
 
             .sidebar {
                 display: flex;
-                border-radius: 40px 40px 0 0;
+                /* border-radius: 40px 40px 0 0; */
+                border-radius: 0;
             }
 
             .imagen {
@@ -257,7 +258,7 @@
             aboutaa
         </section>
         <section id="portfolio">
-            portfolios
+            portfolio
         </section>
         <section id="resume">
             resume
@@ -314,23 +315,12 @@
 
             })
         }
-        
-          var cachedWidth = $(window).width();
-    $(window).resize(function(){
-        var newWidth = $(window).width();
-        if(newWidth !== cachedWidth){
-            
-            alert("hola")
-            //DO RESIZE HERE
-            cachedWidth = newWidth;
-        }
-    });
 
     </script>
 
     <template>
         <ul>
-            <li><a>abouts </a></li>
+            <li><a>about </a></li>
             <li><a>portfolio </a></li>
             <li><a>Resume </a></li>
             <li><a>Contact </a></li>
