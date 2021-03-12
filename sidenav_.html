@@ -257,7 +257,7 @@
             aboutaa
         </section>
         <section id="portfolio">
-            portfolio
+            portfolios
         </section>
         <section id="resume">
             resume
@@ -314,6 +314,17 @@
 
             })
         }
+        
+          var cachedWidth = $(window).width();
+    $(window).resize(function(){
+        var newWidth = $(window).width();
+        if(newWidth !== cachedWidth){
+            
+            alert("hola")
+            //DO RESIZE HERE
+            cachedWidth = newWidth;
+        }
+    });
 
     </script>
 
