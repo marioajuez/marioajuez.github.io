@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     .header {
+  height: 50px;
+}
+
+.body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; 
+  display: flex;
+}
+
+.sidebar {
+  width: 140px;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  flex: 1;
+  /* display: flex; */
+  overflow: auto;
+}
+
+.box {
+  min-height: -webkit-min-content;
+  /* display: flex; */
+  /* flex-direction: column; */
+  flex: 1;
+}
+
+/* .column {
+  padding: 20px;
+  border-right: 1px solid #999;
+} */
+
+.column {
+  height: 90vh;
+  border: solid 1px;
+  margin: 20px;
+  /* width: 100%; */
+  background: beige;
+}
+
+/* .column:nth-child(2) > div {
+   height: auto;
+} */
+
+/* All of these are just for this demo's design. */
+
+body {
+  font-family: sans-serif;
+  font-size: 20px;
+  line-height: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.header {
+  text-align: center;
+  color: #fff;
+  background: #444;
+}
+
+.sidebar {
+  background: #666;
+  padding: 4px 20px;
+  color: #fff;
+}
+
+.page-header {
+  padding: 6px 20px;
+  background: #004141;
+  color: #fff;
+  font-size: .8em;
+}
+
+.content {
+  background-attachment:scroll
+  /* background: #ddd; */
+}
+/* .content::before {
+  content: "";
+  clear: both;
+} */
+
+.box{
+  border: red solid 1px ;
+}
+
+
+    </style>
+</head>
+
+<body>
+  
+    <div class="body">
+
+        <div class="sidebar">Sidebar</div>
+
+        <div class="main">
+
+            <!-- <div class="page-header">Page Header. Content columns are below.</div> -->
+
+            <div class="content">
+                <!-- <div class="box"> -->
+                    <div class="column">
+                        <div>Column 1</div>
+                    </div>
+                    <div class="column">
+                        <div>Column 1</div>
+                    </div>
+                    <div class="column">
+                        <div>Column 1</div>
+                    </div>
+                    <div class="column">
+                      <div>Column 1</div>
+                  </div>
+                  <div class="column">
+                      <div>Column 1</div>
+                  </div>
+                  <div class="column">
+                      <div>Column 1</div>
+                  </div>
+                  <div class="column">
+                    <div>Column 1</div>
+                </div>
+                <div class="column">
+                    <div>Column 1</div>
+                </div>
+                <div class="column">
+                    <div>Column 1</div>
+                </div>
+                </div>
+
+            <!-- </div> -->
+        </div>
+
+    </div>
+
+</body>
+
+</html>

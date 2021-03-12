@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style> 
+    header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+header h1 {
+  width: 100%;
+  margin: 0;
+  line-height: 5rem;
+  padding-top: 15px;
+  color: white;
+  font-size: 5rem;
+  text-align: center;
+  background: tomato;
+}
+
+main {
+  max-width: 400px;
+  margin: auto;
+  padding-top: 80px;
+}
+main p {
+  line-height: 1.5rem;
+  margin: 100px 0;
+}
+main h2 + p {
+  margin-top: 20px;
+}
+main h2:first-child {
+  margin-top: 100px;
+}
+
+footer {
+  width: 100%;
+  height: 100px;
+  background: tomato;
+}
+
+    .menu.fixed{
+        /* background: blue;  */
+        /* width: 100%;
+        top:0;*/
+        position: fixed; 
+    }
+
+    .menu{
+        position: fixed;
+        top: 95px;
+        /* top:0; */
+        /* left: 0; */
+        width: 100%;
+        /* top: 87px; */
+        background: red;
+    }
+
+*{
+    margin:0
+}
+
+    </style>
+</head>
+<body>
+    <div style="position: relative;">
+
+ 
+        <header>
+            <h1>HEADER</h1>
+        </header>
+        <div class ="menu" >mariooooo</div>
+    </div>
+    <!-- <header><h1>HEADER</h1></header> -->
+    <!-- <div class ="menu" >mariooooo</div> -->
+    
+<main>
+<h2>Heading</h2>
+<p>Terrae crescendo nam effigiem verba deorum suis. Est temperiemque sidera astra aethere habentia. Satus premuntur. Lucis fontes. Numero membra silvas fronde. Innabilis austro pontus cum habentem. Hunc coegit congeriem proxima indigestaque illic moles. Vesper solidumque tollere evolvit ventos zonae modo manebat fronde abscidit.</p>
+
+<p>Vix sponte. Tellus secant origo. Nullus habentia origo quin animal mutatas diu. Ubi solum peragebant diu caeca. Tempora sic traxit conversa quanto colebat. Litora securae capacius quanto homini magni. Cuncta zephyro mixtam volucres altae terrarum dicere frigida hanc. Tegit circumfuso quam homo divino.</p>
+
+<p>Undae erant pugnabant faecis. Umor caeca bene titan. Aeris ignea occiduo principio. Timebat motura parte librata fuerat septemque quam nondum. Bene mollia caelumque ad ut. Mentes permisit ne satus otia. Orba pondere turba nondum summaque frigida aequalis cornua convexi. Erant summaque minantia caligine.</p>
+
+<h2>Heading</h2>
+<p>Terrae crescendo nam effigiem verba deorum suis. Est temperiemque sidera astra aethere habentia. Satus premuntur. Lucis fontes. Numero membra silvas fronde. Innabilis austro pontus cum habentem. Hunc coegit congeriem proxima indigestaque illic moles. Vesper solidumque tollere evolvit ventos zonae modo manebat fronde abscidit.</p>
+
+<p>Vix sponte. Tellus secant origo. Nullus habentia origo quin animal mutatas diu. Ubi solum peragebant diu caeca. Tempora sic traxit conversa quanto colebat. Litora securae capacius quanto homini magni. Cuncta zephyro mixtam volucres altae terrarum dicere frigida hanc. Tegit circumfuso quam homo divino.</p>
+
+<p>Undae erant pugnabant faecis. Umor caeca bene titan. Aeris ignea occiduo principio. Timebat motura parte librata fuerat septemque quam nondum. Bene mollia caelumque ad ut. Mentes permisit ne satus otia. Orba pondere turba nondum summaque frigida aequalis cornua convexi. Erant summaque minantia caligine.</p>
+</main>
+
+    
+</body>
+
+<script>
+
+let ham = document.querySelector(".menu");
+let header = document.querySelector('header');
+sticky(header, ham);
+
+    function sticky(el,el2) {
+
+        let elH = el.clientHeight,
+        offset = 0,
+        lastScroll = 0;
+    
+        function makeOffset() {
+            let scrollY = document.documentElement.scrollTop || document.body.scrollTop,
+            diff = scrollY - lastScroll;
+
+        
+            if(offset >= elH ){
+                el2.style.top = 0
+            }
+            if(offset + diff > elH){
+                offset =  elH
+            }
+            else if(scrollY < 0){
+                offset = 0
+            }
+            else{
+                offset = offset + diff
+            }
+
+            if ( offset < 0){
+                offset = 0
+            }
+
+            el2.style.top =  elH +(-offset) + 'px';
+            el.style.top = (-offset) + 'px';
+            lastScroll = scrollY;
+    }
+    window.addEventListener('scroll', makeOffset);
+}
+
+
+
+
+//https://github.com/madeByEdward/headsUp
+</script>
+</html>

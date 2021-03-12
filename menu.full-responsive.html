@@ -52,8 +52,10 @@
 
         .content main:nth-child(4) {
             scroll-behavior: smooth;
+            overscroll-behavior: contain;
             overflow: auto;
             flex: 3;
+
         }
 
         .content main:nth-child(4) .box {
@@ -75,6 +77,15 @@
                 flex-basis: 0;
                 margin: 0;
             }
+        }
+
+        section {
+            height: 80vh;
+            border: 1px solid;
+        }
+
+        section:nth-child(even) {
+            background: rgb(42, 61, 61);
         }
     </style>
 </head>
@@ -102,7 +113,7 @@
         <main class="main">
             <div class="box">
                 <section id="about">
-                    about
+                    aboutaa
                 </section>
                 <section id="portfolio">
                     portfolio
@@ -119,7 +130,93 @@
 
     <script src="js/menu-hamburger_.js"></script>
     <script src="js/menu-nav-options.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var myCounter = 0,
+                myOtherCounter = 0;
+            var scroll = 0;
+
+
+            //Firefox
+            // $(document).bind(...) this works as well
+
+            // $('.main').bind("mousewheel", function(e, delta) {
+            //     if (e.originalEvent.detail > 0){
+
+            //     // var valores =+$(this).scrollTop()+ 1
+
+            //     }
+            //     else{
+            //         // scroll = $('.main').scrollTop() + 1*(delta);
+            //         // $('.main').scrollTop(scroll);
+            //         console.log(deltaY);
+            //         // console.log(scroll);
+            //     }
+
+            //     // e.preventDefault();
+            // });
+            let valores = 0
+
+            document.querySelector(".main").addEventListener("wheel", e => {
+                // var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+                // const delta = Math.sign(event.deltaY);
+                // valores+=delta+100;
+                // document.querySelector(".main").scrollTop = valores
+                console.log(e.wheelDelta/120);
+                // console.info(delta);
+            });
+            //     document.querySelector(".main").addEventListener('wheel', function(e) {
+            //         // console.log(e.deltaY)
+            //         if (e.deltaY < 0) {
+            //             valores+= e.deltaY + 100;
+            //             // valores+= e.deltaY + 100;
+            //             console.log('scrolling up', e.deltaY, valores);
+            //             // valores++;
+            //             // this.scrollTop = e.deltaY ;
+
+            //             // document.getElementById('status').innerHTML = "scroll up";
+            //         }
+            //         if (e.deltaY > 0) {
+            //             valores+= e.deltaY + 10000;
+            //             // this.scrollTop = e.deltaY + 100;
+            //             // console.log('scrolling down', e.deltaY, valores)
+            //             this.scrollTop = valores
+            //             // valores++;
+            //             // document.getElementById('status').innerHTML = "scroll down";
+            //         }
+            // });
+            // $('.main').bind('mousewheel', function (e) {
+
+            //     // if (e.originalEvent.detail > 0) 
+            //         scrollDown();
+            //     // } else {
+            //     //     scrollUp();
+            //     // }
+
+            //     //prevent page fom scrolling
+            //     // return false;
+            // });
+
+
+            function scrollDown() {
+                //scroll down
+                console.log('Down ' + scroll);
+
+                scroll = $('.main').scrollTop() + 1;
+                $('.main').scrollTop(scroll);
+            };
+
+            // function scrollUp() {
+            //     //scroll up
+            //     console.log('Up ' + scroll);
+            //     if (scroll > 0) {
+            //         scroll = $('.main').scrollTop() - 5;
+            //         $('.main').scrollTop(scroll);
+            //     }
+            // };
+        });
+    </script>
     <script>
 
         const sections = document.querySelectorAll("section[id]");

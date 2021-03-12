@@ -1,0 +1,136 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Facebook -->
+    <meta property="og:title" content="site_title">
+    <meta property="og:description" content="site_description">
+    <meta property="og:image" content="http://www.example.com/path/to/image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@site_account">
+    <meta name="twitter:creator" content="@individual_account">
+    <meta name="twitter:url" content="http://www.example.com/path/to/page.html">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="http://www.example.com/path/to/image.jpg">
+
+    <style>
+        /* Element Helpers */
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        body {
+            background: #FFFFFF;
+            margin: 0 auto;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        
+
+        /* App Styles */
+        header {
+            background: #FFFFFF;
+            box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .05);
+            height: 120px;
+            position: fixed;
+            top: 0;
+            z-index: 99;
+            transition: top .3s ease-in-out;
+            width: 100%;
+        }
+
+        .nav-up {
+            top: -36px;
+        }
+
+        .top-banner {
+            background: rgba(0, 0, 0, .85);
+            padding: .5rem 0;
+            height: 20px;
+            width: 100%;
+        }
+
+    
+
+  
+
+        .header {
+            /* max-width: 1023px; */
+            width: 100%;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <header class="nav-down">
+        <div class="top-banner">
+            mario
+        </div>
+
+        <div class="header" style="background: #9C383A;">
+                <h1>R & S Electric</h1>
+        </div>
+    </header>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+
+
+        var didScroll;
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $('header').outerHeight();
+
+        $(window).scroll(function (event) {
+            hasScrolled();
+        });
+
+        function hasScrolled() {
+            var st = $(this).scrollTop();
+
+            if (Math.abs(lastScrollTop - st) <= delta)
+                return;
+
+            if (st > lastScrollTop && st > navbarHeight) {
+                // Scroll Down
+                $('header').removeClass('nav-down').addClass('nav-up');
+            } else {
+                // Scroll Up
+                if (st + $(window).height() < $(document).height()) {
+                    $('header').removeClass('nav-up').addClass('nav-down');
+                }
+            }
+            lastScrollTop = st;
+        }
+
+    </script>
+
+</body>
+
+</html>

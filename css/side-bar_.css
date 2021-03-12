@@ -1,11 +1,10 @@
-
 .sidebar {
   background: radial-gradient(rgb(48 120 177), rgba(0, 0, 0));
   text-align: center;
   box-shadow: 0 3px 10px 3px rgba(0, 0, 0, 0.3);
   color: #fff;
   padding: 27px 0 0;
-  height: 100%;
+  /* margin-left: 150px; */
 }
 
 
@@ -54,20 +53,6 @@ nav li a:hover {
   margin-right: 20px;
 }
 
-section {
-  background-color: #f2f2f2;
-  height: 90vh;
-  margin: 0;
-  padding: 2.5rem 4rem;
-}
-
-section:nth-of-type(2n) {
-  background-color: #ccc;
-}
-
-section:last-of-type {
-  height: 100vh;
-}
 
 h1 {
   color: #444;
@@ -78,6 +63,11 @@ h1 {
   color: rgb(11, 97, 211);
   font-weight: 600;
 } 
+
+.menu-sticky{
+  position: sticky;
+  top: 0;
+}
 
 
 

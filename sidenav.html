@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/menu-hamburger.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+        body{
+            background: #fafafa;
+        }
+
+        #nav-btn {
+            fill: white;
+            height: 40px;
+            position: absolute;
+            right: 10px;
+            top: 7px;
+            display: none;
+        }
+
+        .vertical-line {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: 35px;
+            border-bottom: #F7F7F7 4px solid;
+        }
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            font: normal 15px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #232525;
+        }
+
+        .sidebar {
+            position: fixed;
+            padding-top: 30px;
+            width: 16.66666667%;
+            top: 40px;
+            bottom: 40px;
+            /* border-radius: 20px; */
+            border-radius:50px 0;
+            margin-left: 200px;
+            background: radial-gradient(rgb(48 120 177), rgba(0, 0, 0));
+            text-align: center;
+            box-shadow: 0 3px 45px 15px rgba(0, 0, 0, 0.47);
+            /* box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2); */
+            color: #fff;
+            padding: 27px 0 0;
+        }
+
+
+
+        main {
+            margin-left: calc(230px + 9%);
+            margin-left: -moz-calc(230px + 9%);
+            margin-left: -webkit-calc(219px + 20%);
+            margin-right: 9%;
+            padding-top: 40px;
+            width: calc(82% - 230px);
+            width: -moz-calc(82% - 230px);
+            width: -webkit-calc(77% - 230px);
+            padding-bottom: 20px;
+        }
+
+        .avatar-profile {
+            border-radius: 140px;
+            width: 60%;
+        }
+
+        .profile {
+            text-align: center;
+            padding: 9px 0 12px;
+        }
+
+        .sidebar img {
+            vertical-align: middle;
+            border: 0;
+            margin: auto;
+        }
+
+        #menu-full {
+            /* padding: 20px 30px; */
+            /* background: white; */
+        }
+
+        nav ul {
+            padding: 0;
+        }
+
+        nav li {
+            list-style: none;
+        }
+
+        nav li a {
+            text-decoration: none;
+            /* color: #333; */
+            /* display: block; */
+            /* padding: 0.6rem 0.3rem;
+            font-weight: 400; */
+            transition: all ease-out 250ms;
+        }
+        /* nav li:hover a{
+            background: #fff;
+            color: #8c363e;
+        } */
+
+        nav li{
+            padding: 10px;
+            background: white;
+           
+        }
+        nav li a{
+            color: black;
+        }
+        nav li:hover a {
+            color: white;
+        }
+        
+
+        nav ul li:hover{
+            cursor: pointer;
+            background: transparent;
+            color: black;
+            /* transition: all ease-out 250ms; */
+            transition: all 0.5s ease-out 0s;
+            border:white solid 1px;
+
+            /* color: black; */
+        }
+        /* nav ul li a:hover{
+            color: blanchedalmond;
+        } */
+
+        .main-content {
+            margin-left: 400px;
+            margin-right: 20px;
+        }
+
+        .active {
+            color: rgb(11, 97, 211);
+            font-weight: 600;
+        }
+
+        .menu-sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+
+
+
+        /* SIDE BAR RESPONSIVE */
+
+        @media only screen and (max-width: 730px) {
+
+            #menu-full {
+                display: none;
+            }
+
+            nav {
+                box-shadow: 0 3px 10px 3px rgb(0 0 0 / 30%);
+                background: rgb(255, 255, 255);
+                transition: all 0.9s ease-out 0s;
+                transform: translateY(-3px);
+                visibility: hidden;
+                opacity: 0;
+                position: absolute;
+                width: 100%;
+            }
+
+            nav.show-nav {
+                transform: translateY(1px);
+                transition: all 0.9s ease-out 0s;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+
+
+        @media only screen and (min-width: 730px) {
+            .menu-sticky {
+                opacity: 0;
+                position: absolute;
+                visibility: hidden;
+                display: none;
+            }
+        }
+
+
+
+
+
+        @media (max-width: 730px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                min-height: 100px;
+                top: 0;
+                border-radius: 0;
+            }
+            .menu-sticky, .sidebar{
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
+            }
+            .sidebar{
+                display: flex;
+                border-radius: 40px 40px 0 0;
+            }
+            .imagen{
+                flex: 0 28%;
+            }
+            .nombre{
+                flex: 1;
+            }
+            
+
+            main {
+                /* float: left; */
+                width: 90%;
+                margin-left: 5%;
+                margin-right: 5%;
+                padding-top: 50px;
+            }
+        }
+
+        section {
+            height: 80vh;
+            border: 1px solid;
+        }
+
+        section:nth-child(even) {
+            background: rgb(42, 61, 61);
+        }
+    </style>
+</head>
+
+<body>
+
+    <aside class="sidebar">
+            <div class="imagen">
+                <img class="avatar-profile" src="images/avatar.jpg" alt="">
+            </div>
+            <div class ="nombre">
+                <div class="profile">
+                    <img alt="signature" src="images/signature.png">
+                </div>
+            </div>
+
+
+        <nav class="menu navigation" id="menu-full"></nav>
+    </aside>
+
+    <div class="menu-sticky" >
+        <div class="menu-hamburger">
+            <div class="linea-1"></div>
+            <div class="linea-2"></div>
+            <div class="linea-3"></div>
+        </div>
+        <nav class="menu navigation" id="menu-responsive"></nav>
+    </div>
+
+
+    <main>
+        <section id="about">
+            aboutaa
+        </section>
+        <section id="portfolio">
+            portfolio
+        </section>
+        <section id="resume">
+            resume
+        </section>
+        <section id="contact">
+            contact
+        </section>
+    </main>
+
+
+    <script src="js/menu-hamburger_.js"></script>
+    <script src="js/menu-nav-options.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <template>
+        <ul>
+            <li><a>about </a></li>
+            <li><a>portfolio </a></li>
+            <li><a>Resume </a></li>
+            <li><a>Contact </a></li>
+
+            <!-- <li>
+                <a name="about" href="#about" class="active">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+            </li> -->
+        </ul>
+    </template>
+</body>
+
+</html>

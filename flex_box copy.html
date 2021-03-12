@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/side-bar_.css" rel="stylesheet">
+    <link href="css/menu-hamburger.css" rel="stylesheet">
+    <style>
+
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            color: #331d0e;
+            font-family: 'Roboto', arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .wrapper {
+            /* border: solid 1px; */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+  .body {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+  }
+
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    overflow: auto;
+    scroll-behavior: smooth;
+  }
+
+  .box {
+    min-height: -webkit-min-content;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 30px;
+    border: solid 1px;
+  }
+  .column > div {
+        height: 90vh;
+}
+.column > div:nth-child(even) {
+  background: blue;
+}
+
+  /* .column{
+
+  } */
+
+
+
+    </style>
+</head>
+
+<body>
+  
+    <div class="body">
+
+        <div class="sidebar">
+          <img class="avatar-profile" src="images/avatar.jpg" alt="">
+            <div class="profile">
+                <img alt="signature" src="images/signature.png">
+            </div>
+            <nav class="menu navigation" id="menu-full"></nav>
+        </div>
+
+        <div class="menu-sticky">
+            <div class="menu-hamburger">
+                <div class="linea-1"></div>
+                <div class="linea-2"></div>
+                <div class="linea-3"></div>
+            </div>
+            <nav class="menu navigation" id="menu-responsive"></nav>
+        </div>
+
+        <div class="main">
+
+            <!-- <div class="page-header">Page Header. Content columns are below.</div> -->
+
+            <div class="content">
+                <div class="box">
+                    <div class="column">
+                        <div>Column 1</div>
+                    </div>
+                    <div class="column">
+                        <div>Column 1</div>
+                    </div>
+                    <div class="column">
+                        <div>Column 1</div>
+                    </div>
+
+                  <!-- <div id="about" class="column">
+                    about
+                </div>
+                <div id="portfolio" class="column">
+                    portfolio
+                </div>
+                <div id="resume" class="column">
+                    resume
+                </div>
+                <div id="contact" class="column">
+                    contact
+                </div> -->
+    
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="js/menu-hamburger_.js"></script>
+    <script src="js/menu-nav-options.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script>
+
+        const sections = document.querySelectorAll(".column[id]");
+        const main = document.querySelector(".content");
+
+        [window, main].forEach(element => {
+            element.addEventListener("scroll", () => {
+
+                let scrollY = window.pageYOffset || main.scrollTop
+
+                sections.forEach(section => {
+                    const sectionHeight = section.offsetHeight;
+                    const sectionTop = section.offsetTop - 50;
+                    const selectors = document.querySelectorAll(".navigation a[href*=" + section.id + "]")
+
+
+                    for (let selector of selectors) {
+                        if (selector.name == sections[0].id && scrollY <= sections[0].offsetTop - 50)
+                            selector.classList.add("active");
+                        else if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight)
+                            selector.classList.add("active");
+                        else
+                            selector.classList.remove("active");
+                    }
+                })
+            })
+        })
+      </script>
+          <template>
+            <ul>
+                <li>
+                    <a name="about" href="#about" class="active">About</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#resume">Resume</a>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </template>
+</body>
+
+</html>
