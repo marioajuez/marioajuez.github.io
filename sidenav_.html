@@ -284,9 +284,6 @@
         let offset = 0;
         let lastScroll = 0;
 
-        // var cachedWidth = $(window).width();
-        console.log();
-
 
 
         for (let event of ["load", "resize", "scroll"]) {
@@ -297,28 +294,24 @@
                 let scrollY = document['documentElement' || 'body'].scrollTop;
                 let headHeight = head.clientHeight;
 
+                if (window.innerWidth < 730) {
+                    diff = scrollY - lastScroll;
 
-                if (window.screen.width !== $(window).width()) {
+                    if (offset >= headHeight) menu.style.top = 0
 
+                    if (offset + diff > headHeight) offset = headHeight
+                    else if (scrollY < 0) offset = 0
+                    else offset = offset + diff
 
-                    if (window.innerWidth < 730) {
-                        diff = scrollY - lastScroll;
+                    if (offset < 0) offset = 0
 
-                        if (offset >= headHeight) menu.style.top = 0
-
-                        if (offset + diff > headHeight) offset = headHeight
-                        else if (scrollY < 0) offset = 0
-                        else offset = offset + diff
-
-                        if (offset < 0) offset = 0
-
-                        menu.style.top = headHeight + (-offset) + 'px';
-                        head.style.top = (-offset) + 'px';
-                        lastScroll = scrollY;
-                    }
-                    else
-                        head.style.top = '40px';
+                    menu.style.top = headHeight + (-offset) + 'px';
+                    head.style.top = (-offset) + 'px';
+                    lastScroll = scrollY;
                 }
+                else
+                    head.style.top = '40px';
+
             })
         }
 
@@ -326,7 +319,7 @@
 
     <template>
         <ul>
-            <li><a>about </a></li>
+            <li><a>abouts </a></li>
             <li><a>portfolio </a></li>
             <li><a>Resume </a></li>
             <li><a>Contact </a></li>
