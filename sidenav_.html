@@ -249,18 +249,33 @@
             <img alt="signature" src="images/firma.png">
             <!-- </div> -->
         </div>
-        <div class="menu-sticky">
+        
+
+        <nav class="menu navigation" id="menu-full">
+            <ul>
+                <li><a>about </a></li>
+                <li><a>portfolio </a></li>
+                <li><a>Resume </a></li>
+                <li><a>Contact </a></li>
+    
+            </ul>
+        </nav>
+    </aside>
+<div class="menu-sticky">
             <div class="menu-hamburger">
                 <div class="linea-1"></div>
                 <div class="linea-2"></div>
                 <div class="linea-3"></div>
             </div>
-            <nav class="menu navigation" id="menu-responsive"></nav>
+            <nav class="menu navigation" id="menu-responsive">
+                <ul>
+                    <li><a>aboutss </a></li>
+                    <li><a>portfolio </a></li>
+                    <li><a>Resume </a></li>
+                    <li><a>Contact </a></li>
+                </ul>
+            </nav>
         </div>
-
-        <nav class="menu navigation" id="menu-full"></nav>
-    </aside>
-
 
 
 
@@ -295,14 +310,20 @@
         let offset = 0;
         let lastScroll = 0;
 
-
+        let scrollY = 0
 
         for (let event of ["load", "resize", "scroll"]) {
             window.addEventListener(event, function () {
 
+            if(document['documentElement'] != 0){
+                scrollY = document['documentElement'].scrollTop
+            }else{
+                scrollY = document['body'].scrollTop
+            }
+            
 
 
-                let scrollY = document['documentElement' || 'body'].scrollTop;
+                // let scrollY = document['documentElement' || 'body'].scrollTop;
                 let headHeight = head.clientHeight;
 
                 if (window.innerWidth < 730) {
@@ -331,6 +352,15 @@
 
     </script>
 
+    <!-- <template>
+        <ul>
+            <li><a>about </a></li>
+            <li><a>portfolio </a></li>
+            <li><a>Resume </a></li>
+            <li><a>Contact </a></li>
+
+        </ul>
+    </template> -->
 </body>
 
 </html>
