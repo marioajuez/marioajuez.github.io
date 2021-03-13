@@ -39,7 +39,6 @@
             -webkit-font-smoothing: antialiased;
             font: normal 15px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
             color: #232525;
-            overscroll-behavior: contain;
         }
 
         .sidebar {
@@ -50,7 +49,8 @@
             bottom: 40px;
             border-radius: 50px 0;
             margin-left: 200px;
-            background: radial-gradient(rgb(48 120 177), rgba(0, 0, 0));
+            /* background: radial-gradient(rgb(48 120 177), rgba(0, 0, 0)); */
+            background: rgb(54, 11, 11);
             text-align: center;
             box-shadow: 0 3px 45px 15px rgba(0, 0, 0, 0.47);
             color: #fff;
@@ -298,7 +298,7 @@
 
 
         for (let event of ["load", "resize", "scroll"]) {
-            window.addEventListener(event, () => {
+            window.addEventListener(event, function () {
 
 
 
@@ -333,7 +333,7 @@
 
     <template>
         <ul>
-            <li><a>abou </a></li>
+            <li><a>about </a></li>
             <li><a>portfolio </a></li>
             <li><a>Resume </a></li>
             <li><a>Contact </a></li>
