@@ -181,6 +181,14 @@
 
 
         @media (max-width: 730px) {
+            .nombre {
+                flex: 1;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+
             .sidebar {
                 margin: 0;
                 bottom: auto;
@@ -191,7 +199,10 @@
                 position: fixed;
                 z-index: 2;
                 width: 90%;
-                left:5%;
+                left: 5%;
+            }
+            .sidebar .nombre img{
+                width: 40%;
             }
 
             .sidebar {
@@ -204,13 +215,8 @@
                 /* flex: 0 28%; */
                 margin-bottom: 10px;
                 flex: 0 1 35%;
-                text-align: end;    
+                text-align: end;
             }
-
-            .nombre {
-                flex: 1;
-            }
-
 
             main {
                 width: 90%;
@@ -238,9 +244,9 @@
             <img class="avatar-profile" src="images/avatar.jpg" alt="">
         </div>
         <div class="nombre">
-            <div class="profile">
-                <img alt="signature" src="images/signature.png">
-            </div>
+            <!-- <div class="profile"> -->
+            <img alt="signature" src="images/signature.png">
+            <!-- </div> -->
         </div>
         <div class="menu-sticky">
             <div class="menu-hamburger">
@@ -259,7 +265,7 @@
 
     <main>
         <section id="about">
-            aboutaa
+            about
         </section>
         <section id="portfolio">
             portfolio
