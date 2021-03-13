@@ -281,7 +281,7 @@
 
     <main>
         <section id="about">
-            aboutaa
+            abou
         </section>
         <section id="portfolio">
             portfolio
@@ -311,9 +311,12 @@
         let lastScroll = 0;
 
         let scrollY = 0
+        let events = ["load", "resize", "scroll"]
 
-        for (let event of ["load", "resize", "scroll"]) {
-            window.addEventListener(event, function () {
+        for (let i = 0; i< events.length; i++ ) {
+
+
+            window.addEventListener(events[i], function () {
 
             if(document['documentElement'] != 0){
                 scrollY = document['documentElement'].scrollTop
