@@ -58,13 +58,13 @@
         }
 
         main {
-            margin-left: calc(230px + 9%);
-            margin-left: -moz-calc(230px + 9%);
+            margin-left: calc(219px + 20%);
+            margin-left: -moz-calc(219px + 20%);
             margin-left: -webkit-calc(219px + 20%);
             margin-right: 9%;
             padding-top: 40px;
-            width: calc(82% - 230px);
-            width: -moz-calc(82% - 230px);
+            width: calc(77% - 230px);
+            width: -moz-calc(77% - 230px);
             width: -webkit-calc(77% - 230px);
             padding-bottom: 20px;
         }
@@ -241,7 +241,7 @@
 
     <aside class="sidebar">
         <div class="imagen">
-            <img class="avatar-profile" src="images/profile.jpg" alt="">
+            <img class="avatar-profile" src="images/avatar.jpg" alt="">
         </div>
         <div class="nombre">
             <!-- <div class="profile"> -->
@@ -289,7 +289,6 @@
         let main = document.querySelector("main")
 
 
-        main.style.top = (menu.clientHeight + head.clientHeight) + "px"
 
         let width = window.innerWidth
         let offset = 0;
@@ -306,6 +305,9 @@
                 let headHeight = head.clientHeight;
 
                 if (window.innerWidth < 730) {
+
+                    main.style.top = (menu.clientHeight + head.clientHeight) + "px"
+
                     diff = scrollY - lastScroll;
 
                     if (offset >= headHeight) menu.style.top = 0
