@@ -140,7 +140,7 @@
     </div>
     <div class="main-content">
         <section id="about">
-            <h1>About___</h1>
+            <h1>About___mmar</h1>
         </section>
         <section id="products">
             <h1>Products</h1>
@@ -161,6 +161,8 @@
     // Get all sections that have an ID defined
     const sections = document.querySelectorAll("section[id]")
     let lastScroll = 0
+    var lastScrollTop = 0;
+
 
     // Add an event listener listening for scroll
     window.addEventListener("scroll", navHighlighter);
@@ -169,8 +171,20 @@
 
         // Get current scroll position
         let scrollY = window.pageYOffset;
+        let detectSection = 0
 
-        let detectSection = (scrollDetect()) ? 20 : 500;
+        var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+            if (st > lastScrollTop){
+                detectSection= 20
+                console.log("+");
+                // downscroll code
+            } else {
+                detectSection= 500
+                console.log("-");
+                // upscroll code
+            }
+
+        // let detectSection = (scrollDetect()) ? 20 : 500;
 
 
         // Now we loop through sections to get height, top and ID values for each
@@ -196,19 +210,21 @@
                 document.querySelector(".navigation a[href*=" + sectionId + "]").classList.remove("active");
             }
         });
+
+        lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
     }
 
-    let scrollDetect = () => {
-    let currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-     // Get Current Scroll Value
-    if (currentScroll > 0 && lastScroll <= currentScroll) {
-        lastScroll = currentScroll;
-        return true;
-    } else {
-        lastScroll = currentScroll;
-        return false;
-    }
-}
+    // let scrollDetect = () => {
+    // let currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    //  // Get Current Scroll Value
+    // if (currentScroll > 0 && lastScroll <= currentScroll) {
+    //     lastScroll = currentScroll;
+    //     return true;
+    // } else {
+    //     lastScroll = currentScroll;
+    //     return false;
+    // }
+// }
     
 
 </script>
