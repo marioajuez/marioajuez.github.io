@@ -30,6 +30,12 @@
             font-family: 'Montserrat', sans-serif;
         }
 
+        .main-content{
+            position: relative;
+            top: 63px;
+            z-index: 999999;
+        }
+
         @media only screen and (min-width: 730px) {
 
             .main-content {
@@ -122,7 +128,7 @@
         <nav class="navigation">
             <ul>
                 <li>
-                    <a href="#about">About</a>
+                    <a class ="active" href="#about">About</a>
                     <a href="#products">Products</a>
                     <a href="#services">Services</a>
                     <a href="#contact">Contact</a>
@@ -152,7 +158,8 @@
 
 <script>
     // Get all sections that have an ID defined
-    const sections = document.querySelectorAll("section[id]");
+    const sections = document.querySelectorAll("section[id]")
+    let lastScroll = 0
 
     // Add an event listener listening for scroll
     window.addEventListener("scroll", navHighlighter);
@@ -162,16 +169,23 @@
         // Get current scroll position
         let scrollY = window.pageYOffset;
 
+        let detectSection = (scrollDetect()) ? 20 : 500;
+
+
         // Now we loop through sections to get height, top and ID values for each
         sections.forEach(current => {
             const sectionHeight = current.offsetHeight;
-            const sectionTop = current.offsetTop - 50;
+            const sectionTop = current.offsetTop - detectSection;
             sectionId = current.getAttribute("id");
 
             /*
             - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
             - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
             */
+            
+            // if()
+
+            
             if (
                 scrollY > sectionTop &&
                 scrollY <= sectionTop + sectionHeight
@@ -182,6 +196,18 @@
             }
         });
     }
+
+    let scrollDetect = () => {
+    let currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+     // Get Current Scroll Value
+    if (currentScroll > 0 && lastScroll <= currentScroll) {
+        lastScroll = currentScroll;
+        return true;
+    } else {
+        lastScroll = currentScroll;
+        return false;
+    }
+}
     
 
 </script>
